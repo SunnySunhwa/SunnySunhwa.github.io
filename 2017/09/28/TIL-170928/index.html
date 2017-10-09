@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>TIL_170928 객체, 함수 | Sunny&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="객체 (Object) pass by reference 기본 자료 형은 값을 복사해서 새로운 참조값을 주지만, 객체는 같은 값을 가리키게 됨 따라서 두개의 객체가 같은 값을 가리키고 있다면, 하나만 변경해도 연동됨   객체는 이러한 프로퍼티를 포함하는 컨테이너 delete로 삭제 불가객체는 선언 이후 메모리에 올라감, 따라서 객체를 삭제하고 싶다면 객체명 =">
+<meta name="keywords" content="javascript, objective, function">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIL_170928 객체, 함수">
+<meta property="og:url" content="https://SunnySunhwa.github.io/2017/09/28/TIL-170928/index.html">
+<meta property="og:site_name" content="Sunny&#39;s Blog">
+<meta property="og:description" content="객체 (Object) pass by reference 기본 자료 형은 값을 복사해서 새로운 참조값을 주지만, 객체는 같은 값을 가리키게 됨 따라서 두개의 객체가 같은 값을 가리키고 있다면, 하나만 변경해도 연동됨   객체는 이러한 프로퍼티를 포함하는 컨테이너 delete로 삭제 불가객체는 선언 이후 메모리에 올라감, 따라서 객체를 삭제하고 싶다면 객체명 =">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-09T09:24:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TIL_170928 객체, 함수">
+<meta name="twitter:description" content="객체 (Object) pass by reference 기본 자료 형은 값을 복사해서 새로운 참조값을 주지만, 객체는 같은 값을 가리키게 됨 따라서 두개의 객체가 같은 값을 가리키고 있다면, 하나만 변경해도 연동됨   객체는 이러한 프로퍼티를 포함하는 컨테이너 delete로 삭제 불가객체는 선언 이후 메모리에 올라감, 따라서 객체를 삭제하고 싶다면 객체명 =">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-TIL-170928" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TIL_170928 객체, 함수
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h1 id="객체-Object"><a href="#객체-Object" class="headerlink" title="객체 (Object)"></a>객체 (Object)</h1><ol>
+<li>pass by reference<ul>
+<li>기본 자료 형은 값을 복사해서 새로운 참조값을 주지만, 객체는 같은 값을 가리키게 됨</li>
+<li>따라서 두개의 객체가 같은 값을 가리키고 있다면, 하나만 변경해도 연동됨</li>
+</ul>
+</li>
+<li>객체는 이러한 프로퍼티를 포함하는 컨테이너</li>
+<li>delete로 삭제 불가<br>객체는 선언 이후 메모리에 올라감, 따라서 객체를 삭제하고 싶다면 객체명 =”null”로 <em>참조값</em> 을 삭제 가능</li>
+</ol>
+<ul>
+<li>그 이유는 values는 primitive data. 즉, immutable. 따라서 참조값을 삭제하고 기존의 value는 가비지 컬렉션을 통해 삭제됨<h2 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h2></li>
+<li><p>프로퍼티는 name: value 로 이루어진 한쌍.</p>
+</li>
+<li><p>프로퍼티 값은 <em>undefined 제외</em> 모든 값을 가질 수 있음</p>
+</li>
+<li>동적 생성이 가능하다는 기반으로, 객체 자체에는 순서가 없음 (배열과 다름)</li>
+<li>이름 생성 시, ‘-‘ 사용 비추 (엔진이 연산자로 착각) 필요시 언더스코어_ 사용</li>
+<li>프로퍼티는 동적 생성, 삭제(delete)가 가능 (js특징)</li>
+<li>삭제는 프로퍼티에만 가능, 객체 자체에는 불가</li>
+</ul>
+<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><ul>
+<li>property의 value가 data가 아닌 함수일 경우 메소드라 칭함</li>
+<li>즉, 객체 내부에 묶여있는 함수</li>
+</ul>
+<h2 id="객체-생성-방법"><a href="#객체-생성-방법" class="headerlink" title="객체 생성 방법"></a>객체 생성 방법</h2><ol>
+<li>객체 리터럴 (사람의 편의성을 위해 만든 방법)</li>
+<li>new Object(); 생성자 함수 (기계가 해석하는 방법)<ul>
+<li>리터럴을 써도 생성자 함수 방식으로 기계는 인식</li>
+</ul>
+</li>
+<li>생성자 함수<ul>
+<li>객체를 만드는 함수 그 자체 (우리가 커스텀 가능)</li>
+<li>new object와 달리, 내용을 채운 채 생성 가능</li>
+<li>즉, 템플릿을 한번 만들어 내고 이후 데이터를 인자로 삽입</li>
+<li>같은 객체를 여러번 만들 때 빠르게 생성 가능 (공장화, 생산성 상승)</li>
+<li>this : 생성자 함수가 만들 객체를 지칭</li>
+<li>이렇게 생성된 객체를 ‘인스턴스’라고 부르기도 함</li>
+</ul>
+</li>
+</ol>
+<h2 id="for-in문"><a href="#for-in문" class="headerlink" title="for-in문"></a>for-in문</h2><ul>
+<li>객체에 포함된 프로퍼티에 루프 수행 (순회)가능</li>
+<li>객체말고 배열에는 사용하지 않도록 (순서 문제 발생 -&gt; 배열은 배열의 요소를 순회하는 for-of문 사용)</li>
+<li>person[prop]이라고 쓴 이유는 prop이 함수이기 때문에</li>
+<li>person.prop으로 적을 시 프로퍼티 네임으로 인식  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="string">'first-name'</span>: <span class="string">'Ung-mo'</span>,</div><div class="line">  <span class="string">'last-name'</span>: <span class="string">'Lee'</span>,</div><div class="line">  gender: <span class="string">'male'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// prop에 객체의 프로퍼티 이름이 반환된다. 단, 순서는 보장되지 않는다.</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> prop <span class="keyword">in</span> person) &#123;</div><div class="line">  <span class="built_in">console</span>.log(prop + <span class="string">': '</span> + person[prop]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="함수"><a href="#함수" class="headerlink" title="함수"></a>함수</h1><ul>
+<li>매개변수(인자, parameter)설정의 중요성! -&gt; 함수를 통해 재생산 하는 것의 포인트</li>
+<li>인수(argument)는 매개변수에 할당되는 값</li>
+<li>함수는 매개변수에 함수를 할당할 수 있음 (콜백함수)</li>
+<li>함수 선언식과 표현식의 차이점! (하단참조)</li>
+<li>인수에 primitive data / object 들어갈때 각 특성을 그대로 따름<ul>
+<li>immutable관련 pass by value or reference.</li>
+<li>즉, 원본의 값이 바뀌느냐(obj) 안바뀌느냐(primitive)</li>
+<li>바깥에 있는 원본의 값을 바꾸는 것 : 비순수 함수(코드의 예측성이 떨어짐)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//인수의 제곱을 만드는 함수일때</span></div><div class="line"><span class="comment">//함수 선언식 방법</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcName</span>(<span class="params">parameter</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello, i am'</span> + parameter)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//선언식 호출</span></div><div class="line"><span class="keyword">var</span> variable = funcName(<span class="string">'argument(tom)'</span>);</div><div class="line"><span class="built_in">console</span>.log(variable);</div><div class="line"><span class="comment">//-&gt; 함수명으로 부른듯 보이나, 내부적으로는 엔진이 함수명과 동일한 변수를 지정하여 읽기 때문에, 호출할때는 함수명(=변수명)으로 호출한다. 따라서 아래와 같음</span></div><div class="line"><span class="built_in">console</span>.log(funcName(<span class="string">'argument(tom)'</span>)); <span class="comment">//Hello, I am Tom</span></div><div class="line"></div><div class="line"><span class="comment">//함수 표현식방법 (무기명)</span></div><div class="line"><span class="keyword">var</span> variable = <span class="function"><span class="keyword">function</span>(<span class="params">parameter</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello, i am'</span> + parameter)</div><div class="line">&#125;;</div><div class="line"><span class="comment">//표현식 호출</span></div><div class="line"><span class="built_in">console</span>.log(variable(<span class="string">'argument(tom)'</span>)); <span class="comment">//Hello, I am Tom</span></div></pre></td></tr></table></figure>
+<h2 id="함수-정의방법-3가지"><a href="#함수-정의방법-3가지" class="headerlink" title="함수 정의방법 3가지"></a>함수 정의방법 3가지</h2><ol>
+<li><p>함수선언식</p>
+<ul>
+<li>함수명 생략 불가 (없으면, 호출자체가 불가)</li>
+<li>실행 시, 엔진이 함수명과 동일한 변수명을 저장하여 해석(표현식으로 전환되서 해석)</li>
+<li>실행 1,2,3(생성/초기화/할당)단계가 한번에 이뤄짐</li>
+<li>함수가 밑에서 선언되었어도 위에서 호출이 가능 (but, 비추)</li>
+<li>선언식으로 쓰게될경우 스택메모리에 쌓이므로, 성능/퍼포먼스에서 떨어짐 (심할경우, 스택 오버플로우 발생 가능성)</li>
+</ul>
+</li>
+<li><p>함수표현식</p>
+<ul>
+<li>기명함수 / 익명(무명)함수</li>
+<li>익명함수가 일반적<ul>
+<li>어차피 함수 호출은 변수로 하기때문에 함수의 이름은 중요하지 않음</li>
+<li>또한 함수 이름이 지역변수로 사용되기 때문에 이름으로 호출 시 reference Error발생</li>
+<li>함수를 변수에 담는 방법이므로, 변수 호이스팅의 법칙을 따름</li>
+<li>즉, 함수가 밑에 선언되었다면 위에서 호출할 시 함수가 정의되지 않았다는 에러 발생</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>function()생성자 함수</p>
+</li>
+</ol>
+<ul>
+<li>functino.prototype.constructor 프로퍼티로 접근 가능(<em>프로토타입 체이닝</em>)</li>
+</ul>
+<h3 id="반환값-return"><a href="#반환값-return" class="headerlink" title="반환값 (return)"></a>반환값 (return)</h3><ul>
+<li>호출한 코드에게 수행한 결과를 반환</li>
+<li>여러개의 값을 반환 가능</li>
+<li>return구문 생략 시 의미: return undifined; 로 취급</li>
+</ul>
+<h3 id="argument-property"><a href="#argument-property" class="headerlink" title="argument property"></a>argument property</h3><ul>
+<li>함수 호출시, 매개변수에 몇개 들어올지 모르는 상태에 <em>인수</em> 로써 의도적으로 사용</li>
+<li>들어오는 인수를 배열로 취급함에 따라 대괄호 호출법 사용 가능<ul>
+<li>arguments[0] : 인수로 들어온 0번째 인덱스</li>
+</ul>
+</li>
+</ul>
+<h3 id="length-property"><a href="#length-property" class="headerlink" title="length property"></a>length property</h3><ul>
+<li>함수 정의 시, 매개변수가 몇개인지 매개변수 갯수를 의미</li>
+</ul>
+<h2 id="즉시호출함수표현식-IIFE"><a href="#즉시호출함수표현식-IIFE" class="headerlink" title="즉시호출함수표현식 (IIFE)"></a>즉시호출함수표현식 (IIFE)</h2><ul>
+<li>함수를 선언하자마자 호출문(); 바로 사용</li>
+<li>이를 표현하고자, function문 전체를 ()로 감싸줌</li>
+<li>단 <em>한번만</em> 호출가능</li>
+<li>지역변수만을 사용한다는 장점 (전체js를 내부에 넣어놓으면, 전체 코드를 전역변수없이 사용 가능)</li>
+<li>익명사용이 일반적</li>
+</ul>
+<h2 id="내부-함수"><a href="#내부-함수" class="headerlink" title="내부 함수"></a>내부 함수</h2><ul>
+<li>지역함수: 스코프의 조절을 위해 사용</li>
+</ul>
+<h2 id="콜백-함수"><a href="#콜백-함수" class="headerlink" title="콜백 함수"></a>콜백 함수</h2><ul>
+<li>특정 이벤트가 발생했을 때, 시스템(브라우저)에 의해 호출 (이벤트 핸들러)</li>
+<li>즉, 개발자가 명시적으로 호출X, 브라우저에게 호출하라고 시킬 뿐</li>
+</ul>
+<h2 id="공부하는-방법"><a href="#공부하는-방법" class="headerlink" title="공부하는 방법"></a>공부하는 방법</h2><ol>
+<li>다른이의 코드를 읽기</li>
+<li>눈으로만 읽기보다, 손으로 쳐가면서 읽기</li>
+<li>헷갈린다면, 한줄 한줄 디버깅하면서 확인하기</li>
+</ol>
+<h2 id="채용공고"><a href="#채용공고" class="headerlink" title="채용공고"></a>채용공고</h2><p>채용공고를 보면 공부하는 답이 보임</p>
+<p>###[우아한형제들 프론트엔드]</p>
+<ul>
+<li>[언어] HTML(5), CSS, Javascript(최소 ES5) 기본 지식 보유</li>
+<li>[환경] AWS, Git &amp; Github, HTTP, RESTful API 클라이언트 개발 경험<ul>
+<li>기본적인 용어정리, 이론을 무시하지말자 (면접에서 중요도가 점차 상승추세)</li>
+</ul>
+</li>
+<li>[구조] Javascript MV*  기반 웹앱 개발 및 운영 경험 (Angular, React, Backbone 등)<ul>
+<li>단순히 프로그램명만 적지 않은 이유: 왜? 그게 필요한지, 왜 쓰는지를 알고 쓰는가?</li>
+</ul>
+</li>
+<li>[도구] Grunt, Gulp, Webpack, Browserify 등의 도구 경험자</li>
+<li>기획/디자인/운영 등 다양한 직군과 같이 문제를 정의하고 해결책을 찾아나갈 수 있는 협업 능력</li>
+</ul>
+<h1 id="오늘의-느낀점"><a href="#오늘의-느낀점" class="headerlink" title="오늘의 느낀점"></a>오늘의 느낀점</h1><ul>
+<li>자바스크립트 과정에 들어오면서 강의 후 자습을 하면서도 어떤 방법으로 하는 것이 효율적인지 몰라 조금 헤맨것이 사실. 오늘 강사님의 기본적인 듯 하지만 자신의 진로방향에 맞춘 공부방법에 대한 지침(?)이 많은 도움이 될 것 같다.</li>
+<li>자칫 헷갈릴 수 있는 용어들이 많으나, 확실히 복습 예습을 하면서 조금씩 친숙해지니 2번 볼때와 3번 볼때의 이해도가 다르다. 뭐든 꾸준히가 최고인듯!</li>
+<li>객체와 함수에 대한 기본지식들은 앞으로 코딩을 할때 생각의 기초가 될 수있으므로 기억하고 기억하자</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/09/28/TIL-170928/" class="article-date">
+  <time datetime="2017-09-28T09:07:37.000Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+
+          </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-objective-function/">javascript, objective, function</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/09/29/TIL-170929/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TIL_170929 함수 프로토타입, 스코프
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/27/TIL-170927/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TIL_170927 Control Flow - Algorithm 제어문을 활용한 알고리즘</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
