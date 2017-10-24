@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>TIL_171023 SASS, Javascript test | Sunny&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SASS 문법 특징 숫자 연산을 위해선 변수에 담아야만 숫자 연산이 가능 기본적인 연산자는 문자열로 취급함 (e + -resize —&amp;gt; e-resize)  import partial 선 compile 후 merge (x) 선 merge 후 compile위해 &amp;#95;를 사용 partial 파일은  &amp;#95;header.scss, &amp;#95;sidebar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIL_171023 SASS, Javascript test">
+<meta property="og:url" content="https://SunnySunhwa.github.io/2017/10/23/TIL-171023/index.html">
+<meta property="og:site_name" content="Sunny&#39;s Blog">
+<meta property="og:description" content="SASS 문법 특징 숫자 연산을 위해선 변수에 담아야만 숫자 연산이 가능 기본적인 연산자는 문자열로 취급함 (e + -resize —&amp;gt; e-resize)  import partial 선 compile 후 merge (x) 선 merge 후 compile위해 &amp;#95;를 사용 partial 파일은  &amp;#95;header.scss, &amp;#95;sidebar">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-24T08:06:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TIL_171023 SASS, Javascript test">
+<meta name="twitter:description" content="SASS 문법 특징 숫자 연산을 위해선 변수에 담아야만 숫자 연산이 가능 기본적인 연산자는 문자열로 취급함 (e + -resize —&amp;gt; e-resize)  import partial 선 compile 후 merge (x) 선 merge 후 compile위해 &amp;#95;를 사용 partial 파일은  &amp;#95;header.scss, &amp;#95;sidebar">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-TIL-171023" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TIL_171023 SASS, Javascript test
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h2 id="SASS-문법-특징"><a href="#SASS-문법-특징" class="headerlink" title="SASS 문법 특징"></a>SASS 문법 특징</h2><ul>
+<li>숫자 연산을 위해선 변수에 담아야만 숫자 연산이 가능</li>
+<li>기본적인 연산자는 문자열로 취급함 (e + -resize —&gt; e-resize)</li>
+</ul>
+<h3 id="import-partial"><a href="#import-partial" class="headerlink" title="import partial"></a>import partial</h3><ul>
+<li>선 compile 후 merge (x)</li>
+<li>선 merge 후 compile위해 &#95;를 사용</li>
+<li>partial 파일은  &#95;header.scss, &#95;sidebar.scss, &#95;footer.scss 형식으로해서 merge파일(style.css)에는 일반적 형식 (@import “header”)로 임포트함</li>
+</ul>
+<h3 id="default"><a href="#default" class="headerlink" title="!default;"></a>!default;</h3><ul>
+<li>css의 important와 달리, 초기화 값을 설정한 것</li>
+<li>즉, 해당 문구 이전에 설정해준 값이 없다면 해당 문구를 초기화 값으로 쓰라는 의미</li>
+</ul>
+<h2 id="SASS-적용하기"><a href="#SASS-적용하기" class="headerlink" title="SASS 적용하기"></a>SASS 적용하기</h2><p>아래 3가지 사항부터 먼저 시작해서 차츰 늘려나가는 방식으로 공부하기</p>
+<ol>
+<li>변수 (if/for)</li>
+<li>Partial</li>
+<li>Nesting  </li>
+</ol>
+<h4 id="참고"><a href="#참고" class="headerlink" title="[참고]*"></a>[참고]*</h4><ul>
+<li>개발할때는 src파일에 분류하여 넣어놓고 이를 컴파일해서 배포할 파일은 dist와 같은 폴더에 분류하여 정리</li>
+</ul>
+<h1 id="오늘의-느낀점"><a href="#오늘의-느낀점" class="headerlink" title="오늘의 느낀점"></a>오늘의 느낀점</h1><p>이번 시험에서도 느껴지는 코딩연습!! 특히 19번의 경우에는, todolist 실습 선생님 답안을 해석해보고 익혀야될듯. 나는 내가 생각할 수 있는 범위 안에서 코드를 작성했지만, 이후의<br>문제와 가독성있는 코딩을 위해 어떤 방식으로 작성되어있는지 확인하면서 따라해봐야겠다.</p>
+<hr>
+<h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>####1. 실행 컨텍스트란 무엇인가? 5점<br>ECMAScript 스펙에 따르면 실행 컨텍스트를 실행 가능한 코드를 형상화하고 구분하는 추상적인 개념이라고 정의한다. 좀 더 쉽게 말하자면 실행 컨텍스트는 실행 가능한 코드가 실행되는 환경 이라고 말할수 있다.</p>
+<p>####2. Variable Object (VO / 변수객체)는 무엇인가? 5점<br>실행 컨텍스트가 생성되면 자바스크립트 엔진은 실행에 필요한 여러 정보들을 담을 객체를 생성한다. 이를 Variable Object(VO / 변수 객체)라고 한다. Variable Object는 코드가 실행될 때 엔진에 의해 참조되며 코드에서는 접근할 수 없다.</p>
+<p>Variable Object는 아래의 정보를 담는 객체이다.</p>
+<ul>
+<li>변수</li>
+<li>매개변수(parameter)와 인수 정보(arguments)</li>
+<li>함수 선언(함수 표현식은 제외)</li>
+</ul>
+<p>####3. 클로저(closure)의 개념에 대해 설명하라 5점<br>클로저는 내부함수가 참조하는 외부함수의 지역변수가 외부함수에 의해 내부함수가 반환된 이후에도 life-cycle이 유지되는 것을 의미한다.</p>
+<p>####4. 다음 중 전역 객체의 프로퍼티(Global property)가 아닌 것은? 5점<br>① Infinity<br>② NaN<br>③ undefined<br><strong>④ length</strong></p>
+<p>####5. var numObj = 12345.6789;일 때, numObj.toFixed()의 결과는? 5점<br>12346</p>
+<p>####6. var arr = [1, 2, 3];일때, Math.max를 사용하여 가장 큰 요소를 구하라 5점<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr); <span class="comment">// 3</span></div></pre></td></tr></table></figure></p>
+<p>####7. var str = ‘How are you doing?’;일 때, console.log(str.split(‘ ‘));의 출력 결과는? 5점<br>[ ‘How’, ‘are’, ‘you’, ‘doing?’ ]</p>
+<p>####8. 정규표현식의 플래그 i는 무엇을 의미하는가? 5점<br>대소문자를 구별하지 않고 검색한다.</p>
+<p>####9. 아래의 실행 결과는? 5점<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>];</div><div class="line"><span class="keyword">var</span> b = [<span class="string">'x'</span>, <span class="string">'y'</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> c = a.concat(b);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(c);</div></pre></td></tr></table></figure></p>
+<p>[ ‘a’, ‘b’, ‘x’, ‘y’ ]</p>
+<p>####10. 아래의 실행 결과는? 5점<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</div><div class="line"><span class="built_in">console</span>.log(numbers.map(<span class="built_in">Math</span>.sqrt));</div></pre></td></tr></table></figure></p>
+<p>[ 1, 2, 3 ]</p>
+<p>####11. 배열 [1, 2, 3, 4, 5]에서 홀수만을 필터링하여 그 결과를 배열로 반환하는 코드를 작성하라. 5점<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].filter(<span class="function"><span class="keyword">function</span> (<span class="params">item, index, array</span>) </span>&#123;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'['</span> + index + <span class="string">'] = '</span> + item);</div><div class="line"><span class="keyword">return</span> item % <span class="number">2</span>; <span class="comment">// 홀수만을 필터링한다 (1은 true로 평가된다)</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(result); <span class="comment">// [ 1, 3, 5 ]</span></div></pre></td></tr></table></figure></p>
+<p>####12. DOM이란 무엇인가? 5점<br>브라우저의 렌더링 엔진은 웹 문서를 로드한 후, 파싱하여 웹 문서를 브라우저가 이해할 수 있는 구조로 구성하여 메모리에 적재하는데 이를 DOM이라 한다. 즉 모든 요소와 요소의 어트리뷰트, 텍스트를 각각의 객체로 만들고 이들 객체를 부자 관계를 표현할 수 있는 트리 구조로 구성한 것이 DOM이다. 이 DOM은 자바스크립트를 통해 동적으로 변경할 수 있으며 변경된 DOM은 렌더링에 반영된다.</p>
+<p>####13. 동기식 처리와 비동기식 처리는 무엇이 다른가? 5점<br>동기식 처리 모델(Synchronous processing model)은 직렬적으로 작업을 수행한다. 즉 작업은 순차적으로 실행되며 어떤 작업이 수행 중이면 다음 작업은 대기하게 된다.</p>
+<p>비동기식 처리 모델(Asynchronous processing model or Non-Blocking processing model)은 병렬적으로 작업을 수행한다. 즉 작업이 종료되지 않은 상태라도 대기하지 않고 다음 작업을 실행한다는 의미이다. 예를 들어 서버에서 데이터를 가져와 화면에 표시하는 작업을 수행할 경우 서버에 데이터를 요청한 이후 서버로부터 데이터가 응답될 때까지 대기하지 않고(Non-Blocking) 즉시 다음 작업을 수행한다. 이후 서버로부터 데이터가 응답되면 이벤트가 발생되고 이벤트 핸들러가 데이터를 가지고 수행할 작업을 계속하여 수행한다.</p>
+<p>자바스크립트의 대부분의 DOM 이벤트와 Timer 함수(setTimeout, setInterval), Ajax 요청은 비동기적으로 동작한다.</p>
+<p>####14. DOM Level 2 Event Listener의 경우, 이벤트 핸들러 내부의 this는 무엇을 가리키는가? 5점<br>this는 이벤트 리스너에 바인딩된 요소(currentTarget)를 가리킨다. 이것은 이벤트 객체의 currentTarget 프로퍼티와 같다.</p>
+<p>####15. 계층적 구조에 포함되어 있는 HTML 요소에 이벤트가 발생할 경우 연쇄적 반응이 일어난다. 즉 이벤트가 전파(Event Propagation)되는데 전파 방향에 따라 (1)과 (2)으로 구분할 수 있다. (1)과 (2)는 무엇인가? 5점<br>버블링, 캡처링</p>
+<p>####16. Event 객체의 프로퍼티 중, 이벤트를 발생시킨 요소를 가리키는 것은 무엇인가? 5점<br>① Event.key<br>② Event.currentTarget<br>③ Event.value<br><strong>④ Event.target</strong></p>
+<p>####17. Ajax는 무엇인가? 5점<br>Ajax(Asynchronous JavaScript and XML)는 자바스크립트를 이용해서 비동기적(Asynchronous)으로 서버와 브라우저가 데이터를 교환할 수 있는 통신 방식을 의미한다.</p>
+<p>####18. HTTP Method 중 대표적인 4가지를 열거하라. 5점<br>GET, POST, PUT, DELETE</p>
+<p>####19. 아래의 todos에 새로운 todo를 추가하려 한다. 이때 todo의 id로 사용할 현재 todos의 id 중 최대값보다 1 큰 값을 반환하는 코드를 작성하라. 10점</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> todos = [</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">content</span>: <span class="string">'HTML'</span>, <span class="attr">completed</span>: <span class="literal">true</span> &#125;,</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">content</span>: <span class="string">'CSS'</span>, <span class="attr">completed</span>: <span class="literal">true</span> &#125;,</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">content</span>: <span class="string">'Javascript'</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;</div><div class="line">];</div><div class="line"></div><div class="line"><span class="comment">//답</span></div><div class="line"><span class="keyword">var</span> nextId = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, todos.map(<span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> todo.id;</div><div class="line">&#125;)) + <span class="number">1</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(nextId);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/10/23/TIL-171023/" class="article-date">
+  <time datetime="2017-10-23T03:06:15.000Z" itemprop="datePublished">2017-10-23</time>
+</a>
+
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SASS/">SASS</a>
+  </div>
+
+
+          </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/10/24/TIL-171024/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TIL_171024 ECMAScript6 - let, const
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/18/TIL-171018/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TIL_171018 git, fork한 repo에서 특정 폴더만 갱신 &#39;sparse checkout&#39;</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
