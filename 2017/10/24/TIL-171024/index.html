@@ -5,17 +5,17 @@
   
   <title>TIL_171024 ECMAScript6 - let, const | Sunny&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ES6의 경우, ie 11기준 11%만 지원하기 때문에 ES6 -&amp;gt; ES5로 트랜스파일링 하는 툴이 필요 -&amp;gt; 바벨 Let 코드 블럭 (block level scope) 중복선언 불가 전역변수 let으로 사용해도 전역객체의 프로퍼티가 아님 호이스팅이 되지만, 호스팅이 안되는것처럼 보임 (일시적 사각지대) var는 선언/초기화단계 -&amp;gt; 할당단">
+  <meta name="description" content="ES6의 경우, ie 11기준 11%만 지원하기 때문에 ES6 -&amp;gt; ES5로 트랜스파일링 하는 툴이 필요 (바벨) Let 코드 블럭 (block level scope) 중복선언 불가 전역변수 let으로 사용해도 전역객체의 프로퍼티가 아님 호이스팅이 되지만, 호스팅이 안되는것처럼 보임 (일시적 사각지대) var는 선언/초기화단계 -&amp;gt; 할당단계가 이">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL_171024 ECMAScript6 - let, const">
 <meta property="og:url" content="https://SunnySunhwa.github.io/2017/10/24/TIL-171024/index.html">
 <meta property="og:site_name" content="Sunny&#39;s Blog">
-<meta property="og:description" content="ES6의 경우, ie 11기준 11%만 지원하기 때문에 ES6 -&amp;gt; ES5로 트랜스파일링 하는 툴이 필요 -&amp;gt; 바벨 Let 코드 블럭 (block level scope) 중복선언 불가 전역변수 let으로 사용해도 전역객체의 프로퍼티가 아님 호이스팅이 되지만, 호스팅이 안되는것처럼 보임 (일시적 사각지대) var는 선언/초기화단계 -&amp;gt; 할당단">
+<meta property="og:description" content="ES6의 경우, ie 11기준 11%만 지원하기 때문에 ES6 -&amp;gt; ES5로 트랜스파일링 하는 툴이 필요 (바벨) Let 코드 블럭 (block level scope) 중복선언 불가 전역변수 let으로 사용해도 전역객체의 프로퍼티가 아님 호이스팅이 되지만, 호스팅이 안되는것처럼 보임 (일시적 사각지대) var는 선언/초기화단계 -&amp;gt; 할당단계가 이">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-24T08:07:08.000Z">
+<meta property="og:updated_time" content="2017-10-24T13:15:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL_171024 ECMAScript6 - let, const">
-<meta name="twitter:description" content="ES6의 경우, ie 11기준 11%만 지원하기 때문에 ES6 -&amp;gt; ES5로 트랜스파일링 하는 툴이 필요 -&amp;gt; 바벨 Let 코드 블럭 (block level scope) 중복선언 불가 전역변수 let으로 사용해도 전역객체의 프로퍼티가 아님 호이스팅이 되지만, 호스팅이 안되는것처럼 보임 (일시적 사각지대) var는 선언/초기화단계 -&amp;gt; 할당단">
+<meta name="twitter:description" content="ES6의 경우, ie 11기준 11%만 지원하기 때문에 ES6 -&amp;gt; ES5로 트랜스파일링 하는 툴이 필요 (바벨) Let 코드 블럭 (block level scope) 중복선언 불가 전역변수 let으로 사용해도 전역객체의 프로퍼티가 아님 호이스팅이 되지만, 호스팅이 안되는것처럼 보임 (일시적 사각지대) var는 선언/초기화단계 -&amp;gt; 할당단계가 이">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -59,13 +59,13 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p>ES6의 경우, ie 11기준 11%만 지원하기 때문에 ES6 -&gt; ES5로 트랜스파일링 하는 툴이 필요 -&gt; 바벨</p>
+        <p>ES6의 경우, ie 11기준 11%만 지원하기 때문에 ES6 -&gt; ES5로 트랜스파일링 하는 툴이 필요 (바벨)</p>
 <h1 id="Let"><a href="#Let" class="headerlink" title="Let"></a>Let</h1><ul>
 <li>코드 블럭 (block level scope)</li>
 <li>중복선언 불가</li>
 <li>전역변수 let으로 사용해도 전역객체의 프로퍼티가 아님</li>
 <li>호이스팅이 되지만, 호스팅이 안되는것처럼 보임 (일시적 사각지대)</li>
-<li>var는 선언/초기화단계 -&gt; 할당단계가 이루어지지만, let은 할당이전에 초기화가 되기 때문</li>
+<li>var는 선언/초기화단계 -&gt; 할당단계가 이루어지지만, let은 변수선언문에 도달했을때 초기화가 되기 때문</li>
 <li>즉, let은 선언 이전에 호출하면 레퍼런스에러 발생</li>
 <li>클로저: var는 함수 내에서만 사용했지만, let은 블럭단위기 때문에 for문 내에서도 클로저 사용 가능</li>
 <li>즉, 클로저를 위함 함수사용 없이 클로저로서 사용 가능<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> funcs = [];</div><div class="line"></div><div class="line"><span class="comment">// 함수의 배열을 생성한다</span></div><div class="line"><span class="comment">// i는 for loop에서만 유효한 지역변수이면서 자유변수이다</span></div><div class="line"><span class="comment">// var의 경우에는 function으로 한번 감싸주는 동작이 필요했었음.</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</div><div class="line">  funcs.push(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(i); &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 배열에서 함수를 꺼내어 호출한다</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</div><div class="line">  funcs[j]();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -87,25 +87,40 @@
 </ul>
 <hr>
 <h1 id="템플릿-리터럴"><a href="#템플릿-리터럴" class="headerlink" title="템플릿 리터럴"></a>템플릿 리터럴</h1><ul>
-<li>백틱(backtick) 문자 사용<br>-</li>
+<li>백틱(backtick)     &#96;문자 사용</li>
+<li>줄바꿈, white space 그대로 적용</li>
+<li>템플릿 대입문 <strong>${}</strong>: 문자열, javascript표현식 사용 가능</li>
 </ul>
 <hr>
 <h1 id="Arrow-function"><a href="#Arrow-function" class="headerlink" title="Arrow function"></a>Arrow function</h1><ul>
-<li>Arrow function은 언제나 자신을 포함하는 외부 scope에서 this를 계승</li>
+<li>익명함수로만 사용할 수 있음 (호출 시 함수표현식 사용)</li>
+<li>함수몸체가 한줄의 표현식이라면 중괄호 생략 가능 (자동으로 리턴)</li>
+<li><p>객체를 반환할 때에는 소괄호 사용</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> pow = <span class="function"><span class="params">x</span> =&gt;</span> x * x;</div><div class="line"><span class="built_in">console</span>.log(pow(<span class="number">10</span>)); <span class="comment">// 100</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Arrow function은 언제나 자신을 포함하는 외부 scope에서 this를 계승</p>
+</li>
 <li>즉, -&gt; 메소드 내에선 일반 함수를 쓰도록</li>
 <li>생성자함수엔 사용 X (프로토타입 프로퍼티가 없으므로)</li>
 <li>보통 콜백함수에 사용하는 것을 추천 (addEventLister제외)</li>
-<li>addEventListener의 콜백 함수는 function 키워드 사용 추천</li>
+<li>addEventListener의 콜백 함수는 function 키워드 사용 추천 (arrow function 사용 시, this가 상위 컨텍스트를 가리키게 되므로)</li>
 <li>Rest Parameter의 사용성으로 argument 프로퍼티가 X</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Bad</span></div><div class="line"><span class="keyword">const</span> obj = &#123;</div><div class="line">  name: <span class="string">'Lee'</span>,</div><div class="line">  sayHi: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Hi <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>)</div><div class="line">&#125;;</div><div class="line"></div><div class="line">obj.sayHi(); <span class="comment">// Hi undefined</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// Good</span></div><div class="line"><span class="keyword">const</span> obj = &#123;</div><div class="line">  name: <span class="string">'Lee'</span>,</div><div class="line">  sayHi() &#123; <span class="comment">// === sayHi: function() &#123;</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`Hi <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">obj.sayHi(); <span class="comment">// Hi Lee</span></div></pre></td></tr></table></figure>
-<h2 id="Rest-parameter"><a href="#Rest-parameter" class="headerlink" title="Rest parameter"></a>Rest parameter</h2><ul>
+<hr>
+<h1 id="Extended-Parameter-Handling"><a href="#Extended-Parameter-Handling" class="headerlink" title="Extended Parameter Handling"></a>Extended Parameter Handling</h1><h3 id="1-기본-파라미터-초기값"><a href="#1-기본-파라미터-초기값" class="headerlink" title="1. 기본 파라미터 초기값"></a>1. 기본 파라미터 초기값</h3><p>파라미터에 초기값을 설정하여 방어코드가 필요X<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">plus</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">  x = x || <span class="number">0</span>;</div><div class="line">  y = y || <span class="number">0</span>;</div><div class="line">  <span class="keyword">return</span> x + y;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">plus</span>(<span class="params">x = <span class="number">0</span>, y = <span class="number">0</span></span>) </span>&#123;</div><div class="line">  <span class="comment">// x, y에 인수가 할당되지 않으면 초기값 0이 할당된다.</span></div><div class="line">  <span class="keyword">return</span> x + y;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(plus());     <span class="comment">// 0</span></div><div class="line"><span class="built_in">console</span>.log(plus(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">// 3</span></div></pre></td></tr></table></figure></p>
+<h3 id="2-Rest-parameter"><a href="#2-Rest-parameter" class="headerlink" title="2. Rest parameter"></a>2. Rest parameter</h3><ul>
 <li>스프레드 연산자를 사용하여 매개변수를 선언한 것</li>
+<li>인수를 함수 내부에서 배열로 전달받을 수 있음</li>
 <li>argument(유사배열 반환)없이도 인자에 리스트를 전달, 배열로 반환</li>
 <li>Rest 파라미터는 반드시 마지막 파라미터여야 함</li>
 </ul>
-<h4 id="참고-Spread-연산자"><a href="#참고-Spread-연산자" class="headerlink" title="[참고] Spread 연산자*"></a>[참고] Spread 연산자*</h4><p>연산자의 대상 이터러블을 개별 요소로 분리.<br><strong>[이터러블]</strong> map, set, node-list, string, array과 같이 key가 있고, 순서를 가진 채 순회할 수 있는 객체</p>
+<h3 id="3-Spread-연산자"><a href="#3-Spread-연산자" class="headerlink" title="3. Spread 연산자"></a>3. Spread 연산자</h3><ul>
+<li>연산자의 대상 이터러블을 개별 요소로 분리.</li>
+<li>eg) 배열의 요소를 개별적인 인자로서 매개변수에 전달하고싶을때 (ES5에선 apply를 써야했지만 spread로 가능)<h5 id="참고-이터러블"><a href="#참고-이터러블" class="headerlink" title="[참고] 이터러블"></a>[참고] 이터러블</h5>map, set, node-list, string, array과 같이 key가 있고, 순서를 가진 채 순회할 수 있는 객체</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]) <span class="comment">// -&gt; 1, 2, 3</span></div><div class="line"></div><div class="line"><span class="comment">// 문자열은 이터러블이다.</span></div><div class="line"><span class="comment">// String객체 -&gt; 유사배열 -&gt; 순회 가능</span></div><div class="line"><span class="built_in">console</span>.log(...<span class="string">'Helllo'</span>);  <span class="comment">// H e l l l o</span></div></pre></td></tr></table></figure>
+<h1 id="오늘의-느낀점"><a href="#오늘의-느낀점" class="headerlink" title="오늘의 느낀점"></a>오늘의 느낀점</h1><p>지난 주 Todolist 만들기 2가지 버전 다들 어렵다는 말이 많았나보다 :( 처음으로 html에 적용하기도 했고, 단편적인 알고리즘 문제만 풀다보니 복합적인 연계관계가 무척 어렵게 느껴졌다. 오늘 단락 단락 풀어본 문제로 ES6도 적용해보면서 리마인드하자 (ES5배운지 얼마되지 않은것 같은데 벌써 5만 눈에 익어서 6적용하기가 은근 힘듬 ㅠㅠㅠ)</p>
 
       
     </div>
