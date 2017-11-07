@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Sunny&#39;s Blog">
 <meta property="og:description" content="SASS 문법 특징 숫자 연산을 위해선 변수에 담아야만 숫자 연산이 가능 기본적인 연산자는 문자열로 취급함 (e + -resize —&amp;gt; e-resize)  import partial 선 compile 후 merge (x) 선 merge 후 compile위해 &amp;#95;를 사용 partial 파일은  &amp;#95;header.scss, &amp;#95;sidebar">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-24T08:06:55.000Z">
+<meta property="og:updated_time" content="2017-11-07T02:15:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL_171023 SASS, Javascript test">
 <meta name="twitter:description" content="SASS 문법 특징 숫자 연산을 위해선 변수에 담아야만 숫자 연산이 가능 기본적인 연산자는 문자열로 취급함 (e + -resize —&amp;gt; e-resize)  import partial 선 compile 후 merge (x) 선 merge 후 compile위해 &amp;#95;를 사용 partial 파일은  &amp;#95;header.scss, &amp;#95;sidebar">
@@ -83,21 +83,21 @@
 </ul>
 <h1 id="오늘의-느낀점"><a href="#오늘의-느낀점" class="headerlink" title="오늘의 느낀점"></a>오늘의 느낀점</h1><p>이번 시험에서도 느껴지는 코딩연습!! 특히 19번의 경우에는, todolist 실습 선생님 답안을 해석해보고 익혀야될듯. 나는 내가 생각할 수 있는 범위 안에서 코드를 작성했지만, 이후의<br>문제와 가독성있는 코딩을 위해 어떤 방식으로 작성되어있는지 확인하면서 따라해봐야겠다.</p>
 <hr>
-<h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>####1. 실행 컨텍스트란 무엇인가? 5점<br>ECMAScript 스펙에 따르면 실행 컨텍스트를 실행 가능한 코드를 형상화하고 구분하는 추상적인 개념이라고 정의한다. 좀 더 쉽게 말하자면 실행 컨텍스트는 실행 가능한 코드가 실행되는 환경 이라고 말할수 있다.</p>
-<p>####2. Variable Object (VO / 변수객체)는 무엇인가? 5점<br>실행 컨텍스트가 생성되면 자바스크립트 엔진은 실행에 필요한 여러 정보들을 담을 객체를 생성한다. 이를 Variable Object(VO / 변수 객체)라고 한다. Variable Object는 코드가 실행될 때 엔진에 의해 참조되며 코드에서는 접근할 수 없다.</p>
+<h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><h4 id="1-실행-컨텍스트란-무엇인가-5점"><a href="#1-실행-컨텍스트란-무엇인가-5점" class="headerlink" title="1. 실행 컨텍스트란 무엇인가? 5점"></a>1. 실행 컨텍스트란 무엇인가? 5점</h4><p>ECMAScript 스펙에 따르면 실행 컨텍스트를 실행 가능한 코드를 형상화하고 구분하는 추상적인 개념이라고 정의한다. 좀 더 쉽게 말하자면 실행 컨텍스트는 실행 가능한 코드가 실행되는 환경 이라고 말할수 있다.</p>
+<h4 id="2-Variable-Object-VO-변수객체-는-무엇인가-5점"><a href="#2-Variable-Object-VO-변수객체-는-무엇인가-5점" class="headerlink" title="2. Variable Object (VO / 변수객체)는 무엇인가? 5점"></a>2. Variable Object (VO / 변수객체)는 무엇인가? 5점</h4><p>실행 컨텍스트가 생성되면 자바스크립트 엔진은 실행에 필요한 여러 정보들을 담을 객체를 생성한다. 이를 Variable Object(VO / 변수 객체)라고 한다. Variable Object는 코드가 실행될 때 엔진에 의해 참조되며 코드에서는 접근할 수 없다.</p>
 <p>Variable Object는 아래의 정보를 담는 객체이다.</p>
 <ul>
 <li>변수</li>
 <li>매개변수(parameter)와 인수 정보(arguments)</li>
 <li>함수 선언(함수 표현식은 제외)</li>
 </ul>
-<p>####3. 클로저(closure)의 개념에 대해 설명하라 5점<br>클로저는 내부함수가 참조하는 외부함수의 지역변수가 외부함수에 의해 내부함수가 반환된 이후에도 life-cycle이 유지되는 것을 의미한다.</p>
-<p>####4. 다음 중 전역 객체의 프로퍼티(Global property)가 아닌 것은? 5점<br>① Infinity<br>② NaN<br>③ undefined<br><strong>④ length</strong></p>
-<p>####5. var numObj = 12345.6789;일 때, numObj.toFixed()의 결과는? 5점<br>12346</p>
-<p>####6. var arr = [1, 2, 3];일때, Math.max를 사용하여 가장 큰 요소를 구하라 5점<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr); <span class="comment">// 3</span></div></pre></td></tr></table></figure></p>
-<p>####7. var str = ‘How are you doing?’;일 때, console.log(str.split(‘ ‘));의 출력 결과는? 5점<br>[ ‘How’, ‘are’, ‘you’, ‘doing?’ ]</p>
-<p>####8. 정규표현식의 플래그 i는 무엇을 의미하는가? 5점<br>대소문자를 구별하지 않고 검색한다.</p>
-<p>####9. 아래의 실행 결과는? 5점<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>];</div><div class="line"><span class="keyword">var</span> b = [<span class="string">'x'</span>, <span class="string">'y'</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> c = a.concat(b);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(c);</div></pre></td></tr></table></figure></p>
+<h4 id="3-클로저-closure-의-개념에-대해-설명하라-5점"><a href="#3-클로저-closure-의-개념에-대해-설명하라-5점" class="headerlink" title="3. 클로저(closure)의 개념에 대해 설명하라 5점"></a>3. 클로저(closure)의 개념에 대해 설명하라 5점</h4><p>클로저는 내부함수가 참조하는 외부함수의 지역변수가 외부함수에 의해 내부함수가 반환된 이후에도 life-cycle이 유지되는 것을 의미한다.</p>
+<h4 id="4-다음-중-전역-객체의-프로퍼티-Global-property-가-아닌-것은-5점"><a href="#4-다음-중-전역-객체의-프로퍼티-Global-property-가-아닌-것은-5점" class="headerlink" title="4. 다음 중 전역 객체의 프로퍼티(Global property)가 아닌 것은? 5점"></a>4. 다음 중 전역 객체의 프로퍼티(Global property)가 아닌 것은? 5점</h4><p>① Infinity<br>② NaN<br>③ undefined<br><strong>④ length</strong></p>
+<h4 id="5-var-numObj-12345-6789-일-때-numObj-toFixed-의-결과는-5점"><a href="#5-var-numObj-12345-6789-일-때-numObj-toFixed-의-결과는-5점" class="headerlink" title="5. var numObj = 12345.6789;일 때, numObj.toFixed()의 결과는? 5점"></a>5. var numObj = 12345.6789;일 때, numObj.toFixed()의 결과는? 5점</h4><p>12346</p>
+<h4 id="6-var-arr-1-2-3-일때-Math-max를-사용하여-가장-큰-요소를-구하라-5점"><a href="#6-var-arr-1-2-3-일때-Math-max를-사용하여-가장-큰-요소를-구하라-5점" class="headerlink" title="6. var arr = [1, 2, 3];일때, Math.max를 사용하여 가장 큰 요소를 구하라 5점"></a>6. var arr = [1, 2, 3];일때, Math.max를 사용하여 가장 큰 요소를 구하라 5점</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
+<h4 id="7-var-str-‘How-are-you-doing-’-일-때-console-log-str-split-‘-‘-의-출력-결과는-5점"><a href="#7-var-str-‘How-are-you-doing-’-일-때-console-log-str-split-‘-‘-의-출력-결과는-5점" class="headerlink" title="7. var str = ‘How are you doing?’;일 때, console.log(str.split(‘ ‘));의 출력 결과는? 5점"></a>7. var str = ‘How are you doing?’;일 때, console.log(str.split(‘ ‘));의 출력 결과는? 5점</h4><p>[ ‘How’, ‘are’, ‘you’, ‘doing?’ ]</p>
+<h4 id="8-정규표현식의-플래그-i는-무엇을-의미하는가-5점"><a href="#8-정규표현식의-플래그-i는-무엇을-의미하는가-5점" class="headerlink" title="8. 정규표현식의 플래그 i는 무엇을 의미하는가? 5점"></a>8. 정규표현식의 플래그 i는 무엇을 의미하는가? 5점</h4><p>대소문자를 구별하지 않고 검색한다.</p>
+<h4 id="9-아래의-실행-결과는-5점"><a href="#9-아래의-실행-결과는-5점" class="headerlink" title="9. 아래의 실행 결과는? 5점"></a>9. 아래의 실행 결과는? 5점</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>];</div><div class="line"><span class="keyword">var</span> b = [<span class="string">'x'</span>, <span class="string">'y'</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> c = a.concat(b);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(c);</div></pre></td></tr></table></figure>
 <p>[ ‘a’, ‘b’, ‘x’, ‘y’ ]</p>
 <p>####10. 아래의 실행 결과는? 5점<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</div><div class="line"><span class="built_in">console</span>.log(numbers.map(<span class="built_in">Math</span>.sqrt));</div></pre></td></tr></table></figure></p>
 <p>[ 1, 2, 3 ]</p>
