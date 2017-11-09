@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Sunny&#39;s Blog">
 <meta property="og:description" content="앵귤러안에서는 DOM을 써도 되지만, 쓰는 순간 앵귤러의 의미를 잃어버린다.되도록 쓰지 않도록 하나, Pure Javascript를 잊어버리지 않도록 유의* 용어정리 Model : 애플리케이션에서 사용되는 데이터 형식 과 이를 컨트롤하는 로직 (비즈니스/유효성 검사) View :  사용자에게 model을 표시하는 것    구문 vs 표현식 구문: 시스템을">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2017-11-09T11:45:41.000Z">
+<meta property="og:updated_time" content="2017-11-09T11:55:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL_171109 Angular Component - Template, Date Binding, Built-in directive">
 <meta name="twitter:description" content="앵귤러안에서는 DOM을 써도 되지만, 쓰는 순간 앵귤러의 의미를 잃어버린다.되도록 쓰지 않도록 하나, Pure Javascript를 잊어버리지 않도록 유의* 용어정리 Model : 애플리케이션에서 사용되는 데이터 형식 과 이를 컨트롤하는 로직 (비즈니스/유효성 검사) View :  사용자에게 model을 표시하는 것    구문 vs 표현식 구문: 시스템을">
@@ -87,7 +87,6 @@
 <hr>
 <h3 id="Template-Syntax"><a href="#Template-Syntax" class="headerlink" title="Template Syntax"></a>Template Syntax</h3><p>템플릿과 컴포넌트 클래스간의 데이터 공유를 위한 문법 (데이터 바인딩)  </p>
 <h1 id="Data-Binding"><a href="#Data-Binding" class="headerlink" title="Data Binding"></a>Data Binding</h1><h3 id="1-인터폴레이션"><a href="#1-인터폴레이션" class="headerlink" title="1. 인터폴레이션"></a>1. 인터폴레이션</h3><ul>
-<li></li>
 <li>표현식을 사용 (연산자 제외)</li>
 <li>템플릿에는 하나의 값이 들어가고, 컴포넌트 클래스의 프로퍼티를 변경할 수 있는 연산자는 사용 금지</li>
 <li>당연히 재할당을 지정하는 행위 역시 금지 </li>
@@ -139,7 +138,7 @@
 <li>양방향 데이터바인딩은 꼭 필요할 시만 사용 (성능이슈)</li>
 <li>사용자 입력과 관련돤 DOM요소에 사용됨 (input, textarea, select.. 폼 컨트롤 요소)</li>
 </ul>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// import문에 추가</span></div><div class="line"><span class="keyword">import</span> &#123; FormsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 데코레이터의 import문에 추가</span></div><div class="line"><span class="meta">@NgModule</span>(&#123;</div><div class="line">  declarations: [AppComponent],</div><div class="line">  imports: [BrowserModule, FormsModule],</div><div class="line">  providers: [],</div></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// import문에 추가he</span></div><div class="line"><span class="keyword">import</span> &#123; FormsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 데코레이터의 import문에 추가</span></div><div class="line"><span class="meta">@NgModule</span>(&#123;</div><div class="line">  declarations: [AppComponent],</div><div class="line">  imports: [BrowserModule, FormsModule],</div><div class="line">  providers: [],</div></pre></td></tr></table></figure>
 <hr>
 <h1 id="Built-in-directive"><a href="#Built-in-directive" class="headerlink" title="Built-in directive"></a>Built-in directive</h1><ul>
 <li>애플리케이션 전역에서 사용할 수 있는 공통 관심사를 분리하여 구현</li>
@@ -171,7 +170,11 @@
 <li>즉, css세트를 쓰거나 조건에 의한 클래스 적용시 사용.  </li>
 <li>복수의 클래스 리스트를 조건(true/false or 함수사용)으로 컨트롤할때 사용</li>
 </ul>
-<h3 id="2-ngStyle"><a href="#2-ngStyle" class="headerlink" title="2. ngStyle"></a>2. ngStyle</h3><h2 id="인라인-스타일을-만듬"><a href="#인라인-스타일을-만듬" class="headerlink" title="- 인라인 스타일을 만듬"></a>- 인라인 스타일을 만듬</h2><h2 id="구조-디렉티브"><a href="#구조-디렉티브" class="headerlink" title="구조 디렉티브"></a>구조 디렉티브</h2><h3 id="1-ngIf"><a href="#1-ngIf" class="headerlink" title="1. ngIf"></a>1. ngIf</h3><ul>
+<h3 id="2-ngStyle"><a href="#2-ngStyle" class="headerlink" title="2. ngStyle"></a>2. ngStyle</h3><ul>
+<li>인라인 스타일을 만듬  </li>
+</ul>
+<hr>
+<h2 id="구조-디렉티브"><a href="#구조-디렉티브" class="headerlink" title="구조 디렉티브"></a>구조 디렉티브</h2><h3 id="1-ngIf"><a href="#1-ngIf" class="headerlink" title="1. ngIf"></a>1. ngIf</h3><ul>
 <li><element *ngif="expression">…</element></li>
 <li>조건에 따라 요소를 표시할지 말지 (true/false) 결정할때 사용</li>
 <li>스타일 바인딩(display:none)으로 하는것은 DOM요소가 남지만, ngIf는 아예 DOM까지 제거</li>
@@ -202,7 +205,7 @@
         </li>
         
           <li>
-            <span class="label">Category:</span>
+            <span class="label">Categoría:</span>
             
   <div class="article-category">
     <a class="article-category-link" href="/categories/Angular/">Angular</a>
@@ -221,7 +224,7 @@
 <nav id="article-nav" class="article-nav">
   
     <a href="/2017/11/09/development-enviorment/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Nuevo</strong>
       <div class="article-nav-title">
         
           Development-enviorment setting
@@ -231,7 +234,7 @@
   
   
     <a href="/2017/11/07/TIL-171107/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Viejo</strong>
       <div class="article-nav-title">TIL_171107 Angular의 구조와 원리</div>
     </a>
   
