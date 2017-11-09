@@ -8,11 +8,11 @@
   <meta name="description" content="Angular  앵귤러는 컴포넌트, 파이프, 서비스등으로 구성된 모듈의 집합으로, 하나의 어플리케이션을 만들 수 있는 프레임워크 뷰와 자바스크립트가 상태 공유 (서로의 변화를 자동으로 감지)할 수 있어야 자바스크립트가 뷰를 컨트롤 할 수 있음  이러한 역할, 변화감지를 자동화해주는 것이 앵귤러   방향1: 뷰에서 입력되는 상태 -&amp;gt; 자바스크립트가 알고">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL_171107 Angular의 구조와 원리">
-<meta property="og:url" content="https://SunnySunhwa.github.io/2017/11/01/TIL-171107/index.html">
+<meta property="og:url" content="https://SunnySunhwa.github.io/2017/11/07/TIL-171107/index.html">
 <meta property="og:site_name" content="Sunny&#39;s Blog">
 <meta property="og:description" content="Angular  앵귤러는 컴포넌트, 파이프, 서비스등으로 구성된 모듈의 집합으로, 하나의 어플리케이션을 만들 수 있는 프레임워크 뷰와 자바스크립트가 상태 공유 (서로의 변화를 자동으로 감지)할 수 있어야 자바스크립트가 뷰를 컨트롤 할 수 있음  이러한 역할, 변화감지를 자동화해주는 것이 앵귤러   방향1: 뷰에서 입력되는 상태 -&amp;gt; 자바스크립트가 알고">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-07T07:54:54.000Z">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2017-11-09T07:58:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL_171107 Angular의 구조와 원리">
 <meta name="twitter:description" content="Angular  앵귤러는 컴포넌트, 파이프, 서비스등으로 구성된 모듈의 집합으로, 하나의 어플리케이션을 만들 수 있는 프레임워크 뷰와 자바스크립트가 상태 공유 (서로의 변화를 자동으로 감지)할 수 있어야 자바스크립트가 뷰를 컨트롤 할 수 있음  이러한 역할, 변화감지를 자동화해주는 것이 앵귤러   방향1: 뷰에서 입력되는 상태 -&amp;gt; 자바스크립트가 알고">
@@ -80,7 +80,7 @@
 </ul>
 </li>
 <li>Angular CLI<ul>
-<li>개발환경 구축 자동화 (서버까지)<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// Angular CLI 설치하기</div><div class="line"><span class="meta">$</span><span class="bash"> npm install -g @angular/cli</span></div><div class="line"></div><div class="line">// 프로젝트 폴더 생성 (스캐폴딩됨)</div><div class="line"><span class="meta">$</span><span class="bash"> ng new &lt;name&gt;</span></div><div class="line"></div><div class="line">// 구동시키기 &amp; 오픈</div><div class="line"><span class="meta">$</span><span class="bash"> ng serve -o</span></div><div class="line"></div><div class="line">// 포트 겹칠 시, 포트 바꾸기</div><div class="line"><span class="meta">$</span><span class="bash"> ng serve --port 4201</span></div><div class="line"></div><div class="line">// 컴포넌트 생성시 폴더 구성 (.ts / .html / .css / .spec.ts)</div><div class="line"><span class="meta">$</span><span class="bash"> ng new my-app -it -is -spec <span class="literal">false</span> -flat</span></div><div class="line"></div><div class="line">1. [-it] .html 템플릿 안생기게</div><div class="line">2. [-is] .css 스타일 안생기게</div><div class="line">3. [-spec false] spec.ts  안생기게</div><div class="line">4. [-flat] 폴더 구성X -&gt; 파일로</div><div class="line"></div><div class="line"></div><div class="line">// 배포</div><div class="line"><span class="meta">$</span><span class="bash"> ng build</span></div></pre></td></tr></table></figure>
+<li>개발환경 구축 자동화 (서버까지)<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// Angular CLI 설치하기</div><div class="line"><span class="meta">$</span><span class="bash"> npm install -g @angular/cli</span></div><div class="line"></div><div class="line">// 프로젝트 폴더 생성 (스캐폴딩됨)</div><div class="line"><span class="meta">$</span><span class="bash"> ng new &lt;name&gt;</span></div><div class="line"></div><div class="line">// 컴포넌트 생성시 폴더 구성 조정하며 한번에 만들기 (.ts / .html / .css / .spec.ts)</div><div class="line"><span class="meta">$</span><span class="bash"> ng new my-app -it -is -spec <span class="literal">false</span> -flat</span></div><div class="line"><span class="meta">$</span><span class="bash"> ng new my-app -it -is -skip-tests</span></div><div class="line"></div><div class="line">1. [-it] .html 템플릿 안생기게</div><div class="line">2. [-is] .css 스타일 안생기게</div><div class="line">3. [-spec false] spec.ts  안생기게</div><div class="line">4. [-flat] 폴더 구성X -&gt; 파일로</div><div class="line"></div><div class="line">// 구동시키기 &amp; 오픈</div><div class="line"><span class="meta">$</span><span class="bash"> ng serve -o</span></div><div class="line"></div><div class="line">// 포트 겹칠 시, 포트 바꾸기</div><div class="line"><span class="meta">$</span><span class="bash"> ng serve --port 4201</span></div><div class="line"></div><div class="line">// 배포</div><div class="line"><span class="meta">$</span><span class="bash"> ng build</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -155,8 +155,8 @@
       <ul class="article-meta">
         <li>
           <span class="label">Published Date:</span>
-          <a href="/2017/11/01/TIL-171107/" class="article-date">
-  <time datetime="2017-11-01T02:35:46.000Z" itemprop="datePublished">2017-11-01</time>
+          <a href="/2017/11/07/TIL-171107/" class="article-date">
+  <time datetime="2017-11-07T02:35:46.000Z" itemprop="datePublished">2017-11-07</time>
 </a>
 
         </li>
@@ -180,19 +180,19 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <a href="/2017/11/06/TIL-171106/" id="article-nav-newer" class="article-nav-link-wrap newer">
+    <a href="/2017/11/09/TIL-171109/" id="article-nav-newer" class="article-nav-link-wrap newer">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          TIL_171106 TypeScript
+          TIL_171109 Angular Component - Template, Date Binding, Built-in directive
         
       </div>
     </a>
   
   
-    <a href="/2017/11/01/TIL-171101/" id="article-nav-older" class="article-nav-link-wrap older">
+    <a href="/2017/11/06/TIL-171106/" id="article-nav-older" class="article-nav-link-wrap older">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">TIL_171101 Sass 변환 적용</div>
+      <div class="article-nav-title">TIL_171106 TypeScript</div>
     </a>
   
 </nav>
