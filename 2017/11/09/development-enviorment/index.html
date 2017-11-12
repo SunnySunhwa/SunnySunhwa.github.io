@@ -5,17 +5,17 @@
   
   <title>Development-enviorment setting | Sunny&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Angular CLI1234567891011121314151617181920212223// Angular CLI 설치하기$ npm install -g @angular/cli// 프로젝트 폴더 생성 (스캐폴딩됨)$ ng new &amp;lt;name&amp;gt;// 컴포넌트 생성시 폴더 구성 조정하며 한번에 만들기 (.ts / .html / .css / .spec.ts)">
+  <meta name="description" content="Eslint12345678910111213$ npm init --y$ npm install -save-dev eslint$ ./node_modules/.bin/eslint --init? How would you like to configure ESLint?Use a popular style guide? Which style guide do you want">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Development-enviorment setting">
 <meta property="og:url" content="https://SunnySunhwa.github.io/2017/11/09/development-enviorment/index.html">
 <meta property="og:site_name" content="Sunny&#39;s Blog">
-<meta property="og:description" content="Angular CLI1234567891011121314151617181920212223// Angular CLI 설치하기$ npm install -g @angular/cli// 프로젝트 폴더 생성 (스캐폴딩됨)$ ng new &amp;lt;name&amp;gt;// 컴포넌트 생성시 폴더 구성 조정하며 한번에 만들기 (.ts / .html / .css / .spec.ts)">
+<meta property="og:description" content="Eslint12345678910111213$ npm init --y$ npm install -save-dev eslint$ ./node_modules/.bin/eslint --init? How would you like to configure ESLint?Use a popular style guide? Which style guide do you want">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2017-11-09T05:56:28.000Z">
+<meta property="og:updated_time" content="2017-11-09T13:07:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Development-enviorment setting">
-<meta name="twitter:description" content="Angular CLI1234567891011121314151617181920212223// Angular CLI 설치하기$ npm install -g @angular/cli// 프로젝트 폴더 생성 (스캐폴딩됨)$ ng new &amp;lt;name&amp;gt;// 컴포넌트 생성시 폴더 구성 조정하며 한번에 만들기 (.ts / .html / .css / .spec.ts)">
+<meta name="twitter:description" content="Eslint12345678910111213$ npm init --y$ npm install -save-dev eslint$ ./node_modules/.bin/eslint --init? How would you like to configure ESLint?Use a popular style guide? Which style guide do you want">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -59,7 +59,9 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <h2 id="Angular-CLI"><a href="#Angular-CLI" class="headerlink" title="Angular CLI"></a>Angular CLI</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// Angular CLI 설치하기</div><div class="line">$ npm install -g @angular/cli</div><div class="line"></div><div class="line">// 프로젝트 폴더 생성 (스캐폴딩됨)</div><div class="line">$ ng new &lt;name&gt;</div><div class="line"></div><div class="line">// 컴포넌트 생성시 폴더 구성 조정하며 한번에 만들기 (.ts / .html / .css / .spec.ts)</div><div class="line">$ ng new my-app -it -is -spec false -flat</div><div class="line">$ ng new my-app -it -is -skip-tests</div><div class="line"></div><div class="line">1. [-it] .html 템플릿 안생기게</div><div class="line">2. [-is] .css 스타일 안생기게</div><div class="line">3. [-spec false] spec.ts  안생기게</div><div class="line">4. [-flat] 폴더 구성X -&gt; 파일로</div><div class="line"></div><div class="line">// 구동시키기 &amp; 오픈</div><div class="line">$ ng serve -o</div><div class="line"></div><div class="line">// 포트 겹칠 시, 포트 바꾸기</div><div class="line">$ ng serve --port 4201</div><div class="line"></div><div class="line">// 배포</div><div class="line">$ ng build</div></pre></td></tr></table></figure>
+        <h2 id="Eslint"><a href="#Eslint" class="headerlink" title="Eslint"></a>Eslint</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ npm init --y</div><div class="line">$ npm install -save-dev eslint</div><div class="line">$ ./node_modules/.bin/eslint --init</div><div class="line"></div><div class="line"></div><div class="line">? How would you like to configure ESLint?</div><div class="line">Use a popular style guide</div><div class="line">? Which style guide do you want to follow?</div><div class="line">Airbnb</div><div class="line">? Do you use React?</div><div class="line">No</div><div class="line">? What format do you want your config file to be in?</div><div class="line">JavaScript</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Angular-CLI"><a href="#Angular-CLI" class="headerlink" title="Angular CLI"></a>Angular CLI</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// Angular CLI 설치하기</div><div class="line">$ npm install -g @angular/cli</div><div class="line"></div><div class="line">// 프로젝트 폴더 생성 (스캐폴딩됨)</div><div class="line">$ ng new &lt;name&gt;</div><div class="line"></div><div class="line">// 컴포넌트 생성시 폴더 구성 조정하며 한번에 만들기 (.ts / .html / .css / .spec.ts)</div><div class="line">$ ng new my-app -it -is -spec false -flat</div><div class="line">$ ng new my-app -it -is -skip-tests</div><div class="line"></div><div class="line">1. [-it] .html 템플릿 안생기게</div><div class="line">2. [-is] .css 스타일 안생기게</div><div class="line">3. [-spec false] spec.ts  안생기게</div><div class="line">4. [-flat] 폴더 구성X -&gt; 파일로</div><div class="line"></div><div class="line">// 구동시키기 &amp; 오픈</div><div class="line">$ ng serve -o</div><div class="line"></div><div class="line">// 포트 겹칠 시, 포트 바꾸기</div><div class="line">$ ng serve --port 4201</div><div class="line"></div><div class="line">// 배포</div><div class="line">$ ng build</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -81,11 +83,18 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2017/11/12/TIL-171112/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TIL_171112 Todos practice
+        
+      </div>
+    </a>
   
   
     <a href="/2017/11/09/TIL-171109/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Viejo</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">TIL_171109 Angular Component - Template, Date Binding, Built-in directive</div>
     </a>
   
