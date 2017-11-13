@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>TIL_171113 Angular interaction | Sunny&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="컴포넌트 대상화재사용의 가능성이 있는 부분이라면(기능) 컴포넌트화해서 분리 컴포넌트간 상태공유1. 부모 -&amp;gt; 자식: 프로퍼티 바인딩, @Input1-1) 부모 –&amp;gt; 보낼때1&amp;lt;child [state]=&quot;myState&quot;&amp;gt;&amp;lt;/child&amp;gt; 1-2) –&amp;gt; 자식 받을때1@Input() state: string  즉, [proper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIL_171113 Angular interaction">
+<meta property="og:url" content="https://SunnySunhwa.github.io/2017/11/13/TIL-171113/index.html">
+<meta property="og:site_name" content="Sunny&#39;s Blog">
+<meta property="og:description" content="컴포넌트 대상화재사용의 가능성이 있는 부분이라면(기능) 컴포넌트화해서 분리 컴포넌트간 상태공유1. 부모 -&amp;gt; 자식: 프로퍼티 바인딩, @Input1-1) 부모 –&amp;gt; 보낼때1&amp;lt;child [state]=&quot;myState&quot;&amp;gt;&amp;lt;/child&amp;gt; 1-2) –&amp;gt; 자식 받을때1@Input() state: string  즉, [proper">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2017-11-13T07:32:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TIL_171113 Angular interaction">
+<meta name="twitter:description" content="컴포넌트 대상화재사용의 가능성이 있는 부분이라면(기능) 컴포넌트화해서 분리 컴포넌트간 상태공유1. 부모 -&amp;gt; 자식: 프로퍼티 바인딩, @Input1-1) 부모 –&amp;gt; 보낼때1&amp;lt;child [state]=&quot;myState&quot;&amp;gt;&amp;lt;/child&amp;gt; 1-2) –&amp;gt; 자식 받을때1@Input() state: string  즉, [proper">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-TIL-171113" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TIL_171113 Angular interaction
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p><strong>컴포넌트 대상화</strong><br>재사용의 가능성이 있는 부분이라면(기능) 컴포넌트화해서 분리</p>
+<h2 id="컴포넌트간-상태공유"><a href="#컴포넌트간-상태공유" class="headerlink" title="컴포넌트간 상태공유"></a>컴포넌트간 상태공유</h2><h3 id="1-부모-gt-자식-프로퍼티-바인딩-Input"><a href="#1-부모-gt-자식-프로퍼티-바인딩-Input" class="headerlink" title="1. 부모 -&gt; 자식: 프로퍼티 바인딩, @Input"></a>1. 부모 -&gt; 자식: 프로퍼티 바인딩, @Input</h3><h4 id="1-1-부모-–-gt-보낼때"><a href="#1-1-부모-–-gt-보낼때" class="headerlink" title="1-1) 부모 –&gt; 보낼때"></a>1-1) 부모 –&gt; 보낼때</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;child [state]=<span class="string">"myState"</span>&gt;&lt;/child&gt;</div></pre></td></tr></table></figure>
+<h4 id="1-2-–-gt-자식-받을때"><a href="#1-2-–-gt-자식-받을때" class="headerlink" title="1-2) –&gt; 자식 받을때"></a>1-2) –&gt; 자식 받을때</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@Input() state: string</div></pre></td></tr></table></figure>
+<ul>
+<li>즉, [property-binding] state | myState<br>-&gt; ‘state’라는 하나의 매개체만을 가지고 느슨한 결합상태를 유지</li>
+</ul>
+<h4 id="Setter"><a href="#Setter" class="headerlink" title="Setter"></a>Setter</h4><p>users에 값을 할당하는 순간 (부모-&gt; 자식에게 데이터전송하는 순간), users 내부에 설정한 함수(로직)이 실행<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 자식 컴포넌트</span></div><div class="line">@Input()</div><div class="line">  set users(users: User[]) &#123;</div><div class="line">    <span class="keyword">if</span> (!users) &#123; <span class="keyword">return</span>; &#125;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.cntAdmin</div><div class="line">      = users.filter(<span class="function">(<span class="params">&#123;role&#125;</span>) =&gt;</span> role === <span class="string">'Administrator'</span>).length;</div><div class="line">    <span class="keyword">this</span>.cntDeveloper</div><div class="line">      = users.filter(<span class="function">(<span class="params">&#123;role&#125;</span>) =&gt;</span> role === <span class="string">'Developer'</span>).length;</div><div class="line">    <span class="keyword">this</span>.cntDesigner</div><div class="line">      = users.filter(<span class="function">(<span class="params">&#123;role&#125;</span>) =&gt;</span> role === <span class="string">'Designer'</span>).length;</div><div class="line">    <span class="keyword">this</span>._users = users;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get users(): User[] &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._users;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="2-자식-gt-부모-이벤트-바인딩-Output"><a href="#2-자식-gt-부모-이벤트-바인딩-Output" class="headerlink" title="2. 자식 -&gt; 부모: 이벤트 바인딩, @Output"></a>2. 자식 -&gt; 부모: 이벤트 바인딩, @Output</h3><h4 id="2-1-자식-–-gt-보낼때"><a href="#2-1-자식-–-gt-보낼때" class="headerlink" title="2-1) 자식 –&gt; 보낼때"></a>2-1) 자식 –&gt; 보낼때</h4><ul>
+<li>앵귤러가 지원하는 EventEmitter을 통해 커스텀한 이벤트를 생성</li>
+<li>-&gt; 부모에게 데이터를 전달하는 역할</li>
+<li>event명.emit을 통해 해당 이벤트 호출</li>
+<li>-&gt; 전달할 데이터를 인자에 담아 보냄</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"onClick(state)"</span>&gt;</span> X <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// EventEmitter를 통해 커스텀 이벤트 생성: 데이터를 전달하는 역할</span></div><div class="line"></div><div class="line">@Output() myEvent = <span class="keyword">new</span> EventEmitter();</div><div class="line"></div><div class="line"><span class="comment">// 생성한 커스텀 이벤트 호출: 전달할 데이터를 인자에 담아 보냄--&gt;</span></div><div class="line">onClick(state)&#123; ##do something## this.myEvent.emit(state);&#125;</div></pre></td></tr></table></figure>
+<h4 id="2-2-–-gt-부모-받을때"><a href="#2-2-–-gt-부모-받을때" class="headerlink" title="2-2) –&gt; 부모 받을때"></a>2-2) –&gt; 부모 받을때</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;child (myEvent)=<span class="string">"myEventHandler($event)"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span></div><div class="line"></div><div class="line"><span class="comment">// 부모는 커스텀 이벤트 (state) 바인딩을 받음</span></div><div class="line">myEventHandler(state)&#123; ##do something## &#125;</div></pre></td></tr></table></figure>
+<p><strong>자식 컴포넌트가 자신이 삭제하지 않고, 삭제하라고 부모에게 알리는 이유?</strong><br>같은 참조값(주소)을 바라보고 있기 떄문에, 그 값을 변경하는 비순수함수의 역할을 부모, 자식 둘다 하게 할 경우 데이터의 변경이 어디서 이루어졌는지 알수가 없음  </p>
+<ul>
+<li>-&gt; 부모자식관계의 깊이가 깊을 경우 데이터변경을 추적할 수 없어 코드의 예측성과 협업능력 저하</li>
+<li>즉, 컴포넌트를 Stateful / Stateless 로 역할분리하여 관리</li>
+<li>Stateful: 상태 정보를 저장, 변경가능 (비순수, Smart)</li>
+<li>Stateless: 정보를 표현만 (순수, Dumb)</li>
+</ul>
+<p>특히, 데이터변경은 앵귤러의 변화감지가 일어나도록 해야 뷰에 표현되기 때문에 참조값(주소)을 변경하도록 하는것이 예측하기 좋음<br>(push와 같은 경우는 주소가 변경되지 않아 비추)</p>
+<hr>
+<p><strong>constructor 내부에 public 을 해준 이유는?</strong><br>내부의 id, name, role은 public없이는 파라미터여서 생명주기가 constructor내부로 한정. 따라서 이 앞에 public을 붙여줌으로써 위에 멤버변수 선언을 한것과 동일한 효과를 줌</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(public id: number, public name: string, public role: string) &#123; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="쉐도우-DOM-스타일-셀렉터"><a href="#쉐도우-DOM-스타일-셀렉터" class="headerlink" title="쉐도우 DOM 스타일 셀렉터"></a>쉐도우 DOM 스타일 셀렉터</h2><h3 id="1-host"><a href="#1-host" class="headerlink" title="1. :host"></a>1. :host</h3><ul>
+<li>호스트 요소(컴포넌트 자신)을 선택</li>
+<li>커스텀 생성한 태그(<app-list>)는 기본 html과 같이 inline, block과 같은 브라우저 기본 특징이 없음 -&gt; height, width 초기값이 auto </app-list></li>
+<li>이럴 때에  :host를 통해 css { display: block } 설정 가능</li>
+<li>상태들에 대한 가상클래스 선언 가능 :host(:hover), :host(.active) <h3 id="2-host-context"><a href="#2-host-context" class="headerlink" title="2. :host-context"></a>2. :host-context</h3><ul>
+<li>호스트 요소의 외부(예를 들어 body)의 조건에 의해 컴포넌트의 요소를 선택<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">/* 컴포넌트의 조상 요소에 theme-red 클래스가 선언되어 있을 때 적용된다. */</span></div><div class="line"><span class="selector-pseudo">:host-context(.theme-red)</span> <span class="selector-class">.btn-primary</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</div><div class="line">  <span class="attribute">background-color</span>: crimson;</div><div class="line">  <span class="attribute">border-color</span>: crimson;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/11/13/TIL-171113/" class="article-date">
+  <time datetime="2017-11-13T01:44:06.000Z" itemprop="datePublished">2017-11-13</time>
+</a>
+
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Angular/">Angular</a>
+  </div>
+
+
+          </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2017/11/12/TIL-171112/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TIL_171112 Todos practice</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
