@@ -1285,7 +1285,7 @@ em {
 .article-entry .highlight,
 .article-entry pre {
     padding: 20px;
-    background: #ececec;
+    background: #egeded;
     color: #4d4d4c;
     font-size: 14px;
     overflow: auto;
@@ -1293,8 +1293,9 @@ em {
 }
 
 .article-entry .highlight .gutter pre {
-    color: #aeb4b9;
-    font-size: 14px
+    color: #c3c9ce;
+    font-size: 14px;
+    margin-right: 5px;
 }
 
 .article-entry figure.highlight {

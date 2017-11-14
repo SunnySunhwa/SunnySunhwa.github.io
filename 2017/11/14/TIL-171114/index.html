@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>TIL_171114 Angular Directive, Pipe, Lifecycle Hook | Sunny&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Directive 애플리케이션 전역에서 사용할 수 있는 공통관심사를 컴포넌트에서 분리하여 구현한 것   DOM의 모든 것(모양, 동작, 스타일)을 관리하기 위한 지시(명령)   컴포넌트도 큰 관점에서 바라보면 디렉티브  그렇다면 컴포넌트와 디렉티브의 차이점은?컴포넌트는 디렉티브와 달리, 반드시 뷰를 가져야함 -&amp;gt; 뷰를 생성하는데에 목적을 둠 1. 컴포">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIL_171114 Angular Directive, Pipe, Lifecycle Hook">
+<meta property="og:url" content="https://SunnySunhwa.github.io/2017/11/14/TIL-171114/index.html">
+<meta property="og:site_name" content="Sunny&#39;s Blog">
+<meta property="og:description" content="Directive 애플리케이션 전역에서 사용할 수 있는 공통관심사를 컴포넌트에서 분리하여 구현한 것   DOM의 모든 것(모양, 동작, 스타일)을 관리하기 위한 지시(명령)   컴포넌트도 큰 관점에서 바라보면 디렉티브  그렇다면 컴포넌트와 디렉티브의 차이점은?컴포넌트는 디렉티브와 달리, 반드시 뷰를 가져야함 -&amp;gt; 뷰를 생성하는데에 목적을 둠 1. 컴포">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2017-11-14T06:52:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TIL_171114 Angular Directive, Pipe, Lifecycle Hook">
+<meta name="twitter:description" content="Directive 애플리케이션 전역에서 사용할 수 있는 공통관심사를 컴포넌트에서 분리하여 구현한 것   DOM의 모든 것(모양, 동작, 스타일)을 관리하기 위한 지시(명령)   컴포넌트도 큰 관점에서 바라보면 디렉티브  그렇다면 컴포넌트와 디렉티브의 차이점은?컴포넌트는 디렉티브와 달리, 반드시 뷰를 가져야함 -&amp;gt; 뷰를 생성하는데에 목적을 둠 1. 컴포">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-TIL-171114" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TIL_171114 Angular Directive, Pipe, Lifecycle Hook
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h1 id="Directive"><a href="#Directive" class="headerlink" title="Directive"></a>Directive</h1><ul>
+<li>애플리케이션 전역에서 사용할 수 있는 공통관심사를 컴포넌트에서 분리하여 구현한 것  </li>
+<li>DOM의 모든 것(모양, 동작, 스타일)을 관리하기 위한 지시(명령)  </li>
+<li>컴포넌트도 큰 관점에서 바라보면 디렉티브</li>
+</ul>
+<p><strong>그렇다면 컴포넌트와 디렉티브의 차이점은?</strong><br>컴포넌트는 디렉티브와 달리, 반드시 뷰를 가져야함 -&gt; 뷰를 생성하는데에 목적을 둠</p>
+<h4 id="1-컴포넌트-디렉티브-Component-Directives"><a href="#1-컴포넌트-디렉티브-Component-Directives" class="headerlink" title="1. 컴포넌트 디렉티브 (Component Directives)"></a>1. 컴포넌트 디렉티브 (Component Directives)</h4><ul>
+<li>컴포넌트의 템플릿을 표시하기 위한 디렉티브</li>
+<li>@component 데코레이터의 메타데이터 객체의 seletor 프로퍼티에서 임의의 디렉티브의 이름을 정의</li>
+</ul>
+<h4 id="2-어트리뷰트-디렉티브-Attribute-Directives"><a href="#2-어트리뷰트-디렉티브-Attribute-Directives" class="headerlink" title="2. 어트리뷰트 디렉티브 (Attribute Directives)"></a>2. 어트리뷰트 디렉티브 (Attribute Directives)</h4><ul>
+<li>어트리뷰트 디렉티브는 HTML 요소의 어트리뷰트로 사용하여 해당 요소의 모양이나 동작을 제어</li>
+<li>ngClass, ngStyle</li>
+</ul>
+<h4 id="3-구조-디렉티브-Structural-Directives"><a href="#3-구조-디렉티브-Structural-Directives" class="headerlink" title="3. 구조 디렉티브 (Structural Directives)"></a>3. 구조 디렉티브 (Structural Directives)</h4><ul>
+<li>구조 디렉티브는 DOM 요소를 반복 생성(ngFor)</li>
+<li>조건에 의한 추가 또는 제거(ngIf, ngSwitch)</li>
+<li>DOM 레이아웃(layout)을 변경하는 디렉티브</li>
+</ul>
+<h4 id="참고"><a href="#참고" class="headerlink" title="[참고]"></a>[참고]</h4><ol>
+<li>네이티브 돔에 접근하는 방법은 해킹의 위험이 있기 때문에 부적절<br>-&gt; Renderer2객체를 활용</li>
+<li>앵귤러 구조디렉티브는 하나의 요소에 하나의 구조디렉티브만 가질수 있음<br>-&gt; 두개를 쓰고 싶다면 ng-container를 활용</li>
+</ol>
+<hr>
+<h2 id="파이프"><a href="#파이프" class="headerlink" title="파이프"></a>파이프</h2><ul>
+<li>템플릿 내에서 원하는 형식으로 값을 변환하여 표시</li>
+<li>파이프를 통한 형식변경은 원본은 변경X</li>
+<li>커스텀 파이프의 활용<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// reverse.pipe.ts</span></div><div class="line"><span class="keyword">import</span> &#123; Pipe, PipeTransform &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"></div><div class="line">@Pipe(&#123;</div><div class="line">  name: <span class="string">'reverse'</span></div><div class="line">&#125;)</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ReversePipe</span> <span class="title">implements</span> <span class="title">PipeTransform</span> </span>&#123;</div><div class="line">  transform(value = <span class="string">''</span>): string &#123;</div><div class="line">    <span class="keyword">return</span> value.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// app.component.ts</span></div><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"></div><div class="line">@Component(&#123;</div><div class="line">  selector: <span class="string">'app-root'</span>,</div><div class="line">  template: <span class="string">`</span></div><div class="line"><span class="string">    &lt;input type="text" [(ngModel)]="value"&gt;</span></div><div class="line"><span class="string">    &lt;p&gt;&#123;&#123; value | reverse &#125;&#125;&lt;/p&gt;</span></div><div class="line"><span class="string">  `</span></div><div class="line">&#125;)</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line">  value: string;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="앵귤러의-변화감지"><a href="#앵귤러의-변화감지" class="headerlink" title="앵귤러의 변화감지"></a>앵귤러의 변화감지</h3><p><strong>변화감지의 대상: 바인딩 되어있는 데이터</strong><br>앵귤러는 필터가 걸려있는 변화감지 대상은 주소값이 변해야 변화감지를 한다!</p>
+<p><strong>데이터 변화감지를 못할 경우 해결방안</strong></p>
+<ol>
+<li><p>주소값이 변하지 않는 push의 사용보다 주소값을 변하게 하는 concat을 활용</p>
+</li>
+<li><p>순수파이프를 활용하여 pipe데코레이터에 pure: false를 지정</p>
+</li>
+</ol>
+<ul>
+<li>감시하는 정도를 세밀하게 하여 변화감지 -&gt; 성능 저하 우려</li>
+</ul>
+<p>즉, 객체를 변경할때 주소값을 변경하도록 코딩한다! (push, forEach 금지)</p>
+<hr>
+<h1 id="Lifecycle-Hook"><a href="#Lifecycle-Hook" class="headerlink" title="Lifecycle Hook"></a>Lifecycle Hook</h1><h3 id="1-Constructor"><a href="#1-Constructor" class="headerlink" title="1. Constructor"></a>1. Constructor</h3><ul>
+<li>객체를 생성하는 기능을 담당</li>
+<li>따라서 의존성 주입 외에는 사용 X</li>
+</ul>
+<h3 id="2-ngOnChanges"><a href="#2-ngOnChanges" class="headerlink" title="2. ngOnChanges"></a>2. ngOnChanges</h3><ul>
+<li>입력프로퍼티(@Input)가 들어왔을때</li>
+<li>입력프로퍼티에 변화감지가 됐을때 (주소가 변경됐을때만)</li>
+<li>드문 사용</li>
+</ul>
+<h3 id="3-ngOnInit"><a href="#3-ngOnInit" class="headerlink" title="3. ngOnInit*"></a>3. ngOnInit*</h3><ul>
+<li>모든 프로퍼티, 입력프로퍼티의 초기화가 완료된 시점에 한번만 호출</li>
+<li>대부분의할당을 시작하는 지점</li>
+<li>즉, <strong>프로퍼티의 할당 또는 참조를 해야한다면 ngOnInit에</strong></li>
+</ul>
+<h3 id="4-ngDoCheck"><a href="#4-ngDoCheck" class="headerlink" title="4. ngDoCheck"></a>4. ngDoCheck</h3><ul>
+<li>변화감지에 의해 감지되지 않거나 감지할 수 없는 사항을 더티체크하기 위해 사용 -&gt; 시스템 과부하 우려</li>
+<li>즉, 의도적으로 데이터의 변경은 주소값이 변경되도록 코딩하는 것!!</li>
+<li>ngDoCheck는 사용을 피하라</li>
+</ul>
+<h3 id="5-ngOnDestroy"><a href="#5-ngOnDestroy" class="headerlink" title="5. ngOnDestroy*"></a>5. ngOnDestroy*</h3><ul>
+<li>Rxjs의 연결을 끊어줄때 (컴포넌트의 사망 시기)</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/11/14/TIL-171114/" class="article-date">
+  <time datetime="2017-11-14T01:31:23.000Z" itemprop="datePublished">2017-11-14</time>
+</a>
+
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Angular/">Angular</a>
+  </div>
+
+
+          </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2017/11/13/TIL-171113/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TIL_171113 Angular interaction</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
