@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>TIL_180417 Java 상속과 생성자 | Sunny&#39;s Blog</title>
+  <title>TIL_180417 Java 상속과 생성자, overriding/loading | Sunny&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="상속과 생성자 Class 자식클래스명 extends 부모클래스명 {}을 통해 상속 가능 자바는 객체 속에 기본적으로 자신의 이름(객체명)과 동일한 생성자를 만듬 직접적인 생성자를 만들 경우 암시적 생성자는 만들어 지지 않음 부모클래스와 자식클래스가 모두 매개변수를 언급하고 있을 시, 에러 발생 -&amp;gt; 하위객체는 extends함으로써 자바가 만든 부모객체">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TIL_180417 Java 상속과 생성자">
+<meta property="og:title" content="TIL_180417 Java 상속과 생성자, overriding&#x2F;loading">
 <meta property="og:url" content="https://SunnySunhwa.github.io/2018/04/17/TIL-180417/index.html">
 <meta property="og:site_name" content="Sunny&#39;s Blog">
 <meta property="og:description" content="상속과 생성자 Class 자식클래스명 extends 부모클래스명 {}을 통해 상속 가능 자바는 객체 속에 기본적으로 자신의 이름(객체명)과 동일한 생성자를 만듬 직접적인 생성자를 만들 경우 암시적 생성자는 만들어 지지 않음 부모클래스와 자식클래스가 모두 매개변수를 언급하고 있을 시, 에러 발생 -&amp;gt; 하위객체는 extends함으로써 자바가 만든 부모객체">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-04-17T09:18:47.033Z">
+<meta property="og:updated_time" content="2018-04-17T10:08:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TIL_180417 Java 상속과 생성자">
+<meta name="twitter:title" content="TIL_180417 Java 상속과 생성자, overriding&#x2F;loading">
 <meta name="twitter:description" content="상속과 생성자 Class 자식클래스명 extends 부모클래스명 {}을 통해 상속 가능 자바는 객체 속에 기본적으로 자신의 이름(객체명)과 동일한 생성자를 만듬 직접적인 생성자를 만들 경우 암시적 생성자는 만들어 지지 않음 부모클래스와 자식클래스가 모두 매개변수를 언급하고 있을 시, 에러 발생 -&amp;gt; 하위객체는 extends함으로써 자바가 만든 부모객체">
   
   
@@ -51,7 +51,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      TIL_180417 Java 상속과 생성자
+      TIL_180417 Java 상속과 생성자, overriding/loading
     </h1>
   
 
@@ -80,6 +80,15 @@
 <li>자식 클래스의 초기화문보다 super 키워드가 가장 먼저 사용되어야 함<br>-자식클래스는 부모클래스의 상속으로 인스턴스를 생성하기 때문에, 부모클래스의 초기화가 끝난 상태에서만 자식클래스의 초기화 진행이 가능<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Calculator</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.left = left;</div><div class="line">        <span class="keyword">this</span>.right = right;</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOprands</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.left = left;</div><div class="line">        <span class="keyword">this</span>.right = right;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sum</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="keyword">this</span>.left + <span class="keyword">this</span>.right);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubstractionableCalculator</span> <span class="keyword">extends</span> <span class="title">Calculator</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SubstractionableCalculator</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</div><div class="line">      <span class="comment">// 자식객체에 super키워드 사용</span></div><div class="line">        <span class="keyword">super</span>(left, right);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">substract</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="keyword">this</span>.left - <span class="keyword">this</span>.right);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalculatorConstructorDemo5</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">      <span class="comment">//setOperands 함수 호출 없이 객체 생성시 left 와 right 값을 설정하기 위해서</span></div><div class="line">        SubstractionableCalculator c1 = <span class="keyword">new</span> SubstractionableCalculator(<span class="number">10</span>, <span class="number">20</span>);</div><div class="line">        c1.sum();</div><div class="line">        c1.avg();</div><div class="line">        c1.substract();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<hr>
+<h2 id="Overriding"><a href="#Overriding" class="headerlink" title="Overriding"></a>Overriding</h2><p>부모클래스의 메소드를 하위클래스에서 재정의하기 위해서는 몇가지 조건이 동일하여야 함</p>
+<ul>
+<li>메소드 이름</li>
+<li>리턴 타입</li>
+<li>매개변수의 수, 타입, 순서</li>
+</ul>
+<p>-&gt; 이럴경우, 부모클래스와 하위클래스의 코딩이 중복됨<br>-&gt; 중복을 피하기 위해서는 super 키워드 사용<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 부모 클래스</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">avg</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> ((<span class="keyword">this</span>.left + <span class="keyword">this</span>.right) / <span class="number">2</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 자식 클래스에는 부모클래스를 의미하는 super 키워드 사용</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">avg</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.avg();</div><div class="line">    &#125;</div><div class="line">``` </div><div class="line">---</div><div class="line"></div><div class="line">## Overloading</div><div class="line">- 같은 이름이지만 서로다른 매개변수의 형식을 가지고 있는 메소드</div><div class="line">- 즉, 자바입장에서는 같은 이름의 메소드일지라도 매개변수의 이름이나, 타입이 다를경우 다른 메소드로 인식하게 됨.</div><div class="line">- 단, 매개변수의 이름, 형식이 같으나 리턴값이 (<span class="keyword">int</span>, <span class="keyword">void</span>등) 다를 경우 에러발생</div><div class="line">- 위의 경우에는 메소드를 호출하는 방식이 같기에, 자바 입장에서는 어떤 리턴값의 메소드를 실행해야하는지 알수 없음</div><div class="line">- 즉, 오버로딩은 **<span class="number">1</span>. 리턴값이 같아야하며 <span class="number">2</span>. 메소드를 호출하는 방식이 달라야 함**</div><div class="line">```java</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> left, right;</div><div class="line">    <span class="keyword">int</span> third = <span class="number">0</span>;</div><div class="line"></div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOprands</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.left = left;</div><div class="line">        <span class="keyword">this</span>.right = right;</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOprands</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> third)</span></span>&#123;</div><div class="line">        <span class="comment">// this.left = left;</span></div><div class="line">        <span class="comment">// this.right = right; 중복을 막도록 아래코드로 대체</span></div><div class="line">        <span class="comment">// 중복 부분을 먼저 호출</span></div><div class="line">        <span class="keyword">this</span>.setOprands(left, right);</div><div class="line">        <span class="keyword">this</span>.third = third;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h4 id="오버라이딩-vs-오버로딩"><a href="#오버라이딩-vs-오버로딩" class="headerlink" title="오버라이딩 vs 오버로딩"></a>오버라이딩 vs 오버로딩</h4><p><strong>오버라이딩</strong>은 하위클래스가 상속받은 부모클래스의 메소드를 새롭게 변경, 정의하여 사용하고자 할때 사용.<br><strong>오버로딩</strong>은 같은 이름, 다른 매개변수의 메소드를 여러개 만들 수 있음 (eg. 같은 기능을 하는 하나의 메소드이나, 매개변수의 갯수에 따른 경우의 수와 같은 때에 적용)  </p>
 
       
     </div>
@@ -94,7 +103,7 @@
         </li>
         
           <li>
-            <span class="label">Catégorie:</span>
+            <span class="label">Category:</span>
             
   <div class="article-category">
     <a class="article-category-link" href="/categories/Java/">Java</a>
@@ -116,7 +125,7 @@
   
   
     <a href="/2017/11/29/TIL-171129/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">TIL_171129 Team project, 현업개발자 테크멘토링</div>
     </a>
   
