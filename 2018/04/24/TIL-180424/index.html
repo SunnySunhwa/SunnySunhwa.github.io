@@ -5,17 +5,17 @@
   
   <title>TIL_180424 Exception (try/catch) | Sunny&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Exception프로그램을 만든 프로그래머가 상정한 정상적인 처리에서 벗어나는 경우에 이를 처리하기 위한 방법 try &amp;amp; catch예외가 발생하면 자바는 마치 메소드를 호출하듯이 catch를 호출하면서 그 인자로 Exception 클래스의 인스턴스를 전달123456try&amp;#123;  //예외가 예상되는 로직&amp;#125;catch(Exception e)">
+  <meta name="description" content="Exception프로그램을 만든 프로그래머가 상정한 정상적인 처리에서 벗어나는 경우에 이를 처리하기 위한 방법 try &amp;amp; catch예외가 발생하면 자바는 마치 메소드를 호출하듯이 catch를 호출하면서 그 인자로 Exception 클래스의 인스턴스를 전달  catch문은 여러개 설정이 가능하여 경우에 따라 다른 로직설정이 가능 eg. catch(Ar">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL_180424 Exception (try&#x2F;catch)">
 <meta property="og:url" content="https://SunnySunhwa.github.io/2018/04/24/TIL-180424/index.html">
 <meta property="og:site_name" content="Sunny&#39;s Blog">
-<meta property="og:description" content="Exception프로그램을 만든 프로그래머가 상정한 정상적인 처리에서 벗어나는 경우에 이를 처리하기 위한 방법 try &amp;amp; catch예외가 발생하면 자바는 마치 메소드를 호출하듯이 catch를 호출하면서 그 인자로 Exception 클래스의 인스턴스를 전달123456try&amp;#123;  //예외가 예상되는 로직&amp;#125;catch(Exception e)">
+<meta property="og:description" content="Exception프로그램을 만든 프로그래머가 상정한 정상적인 처리에서 벗어나는 경우에 이를 처리하기 위한 방법 try &amp;amp; catch예외가 발생하면 자바는 마치 메소드를 호출하듯이 catch를 호출하면서 그 인자로 Exception 클래스의 인스턴스를 전달  catch문은 여러개 설정이 가능하여 경우에 따라 다른 로직설정이 가능 eg. catch(Ar">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-04-24T05:21:25.219Z">
+<meta property="og:updated_time" content="2018-04-29T05:38:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL_180424 Exception (try&#x2F;catch)">
-<meta name="twitter:description" content="Exception프로그램을 만든 프로그래머가 상정한 정상적인 처리에서 벗어나는 경우에 이를 처리하기 위한 방법 try &amp;amp; catch예외가 발생하면 자바는 마치 메소드를 호출하듯이 catch를 호출하면서 그 인자로 Exception 클래스의 인스턴스를 전달123456try&amp;#123;  //예외가 예상되는 로직&amp;#125;catch(Exception e)">
+<meta name="twitter:description" content="Exception프로그램을 만든 프로그래머가 상정한 정상적인 처리에서 벗어나는 경우에 이를 처리하기 위한 방법 try &amp;amp; catch예외가 발생하면 자바는 마치 메소드를 호출하듯이 catch를 호출하면서 그 인자로 Exception 클래스의 인스턴스를 전달  catch문은 여러개 설정이 가능하여 경우에 따라 다른 로직설정이 가능 eg. catch(Ar">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -60,8 +60,15 @@
     <div class="article-entry typo" itemprop="articleBody">
       
         <h2 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h2><p>프로그램을 만든 프로그래머가 상정한 정상적인 처리에서 벗어나는 경우에 이를 처리하기 위한 방법</p>
-<h3 id="try-amp-catch"><a href="#try-amp-catch" class="headerlink" title="try &amp; catch"></a>try &amp; catch</h3><p>예외가 발생하면 자바는 마치 메소드를 호출하듯이 catch를 호출하면서 그 인자로 Exception 클래스의 인스턴스를 전달<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">  <span class="comment">//예외가 예상되는 로직</span></div><div class="line">&#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">  <span class="comment">//예외가 발생했을때 실행될 로직</span></div><div class="line">  System.out.println(<span class="string">"오류가 발생했습니다 : "</span>+e.getMessage());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="try-amp-catch"><a href="#try-amp-catch" class="headerlink" title="try &amp; catch"></a>try &amp; catch</h3><p>예외가 발생하면 자바는 마치 메소드를 호출하듯이 catch를 호출하면서 그 인자로 Exception 클래스의 인스턴스를 전달</p>
+<ul>
+<li>catch문은 여러개 설정이 가능하여 경우에 따라 다른 로직설정이 가능</li>
+<li>eg. catch(ArithmeticException e){}, (ArrayIndexOfBoundsException e){} </li>
+<li>즉, else if와 같이 사용이 가능함<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  <span class="comment">//예외가 예상되는 로직</span></div><div class="line">&#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">  <span class="comment">//예외가 발생했을때 실행될 로직</span></div><div class="line">  System.out.println(<span class="string">"오류가 발생했습니다 : "</span>+e.getMessage());</div><div class="line">&#125; <span class="keyword">finally</span> &#123;</div><div class="line">  System.out.println(<span class="string">"언제나 실행되는 로직"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 <p>1) e.getMessage: 간략한 메세지만 출력<br>2) e.toString(): +예외를 일으킨 이유<br>3) e.printStackTrace(): +에외의 위치까지</p>
+<h3 id="finally"><a href="#finally" class="headerlink" title="finally"></a>finally</h3><p>try/catch믄 다음에 나오는 문법으로 예외여부와 관계없이 실행되는 로직</p>
 
       
     </div>
@@ -94,7 +101,14 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2018/04/29/TIL-180429/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TIL_180429 Object class, API
+        
+      </div>
+    </a>
   
   
     <a href="/2018/04/22/TIL-180422/" id="article-nav-older" class="article-nav-link-wrap older">
