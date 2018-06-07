@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>vscode 자바 개발환경 설정 | Sunny&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="학기가 시작하기 전 나름대로의 예습(?)으로 생코 튜토리얼을 보며 자바를 독학하고 있었는데 생코에서는 IDE를 이클립스를 사용하더랜다. 자바스크립트, blog등을 vscode로 사용하고 있던 나로서는, vscode의 단축키 기능을 사용하지 못하는 것 (엄격하게 말하자면, 새로운 단축키를 익혀야 한다는것)이 못내 번거로운 일이었는데, 심지어 학교에서도 그냥">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode 자바 개발환경 설정">
+<meta property="og:url" content="https://SunnySunhwa.github.io/2018/05/10/java-enviorment/index.html">
+<meta property="og:site_name" content="Sunny&#39;s Blog">
+<meta property="og:description" content="학기가 시작하기 전 나름대로의 예습(?)으로 생코 튜토리얼을 보며 자바를 독학하고 있었는데 생코에서는 IDE를 이클립스를 사용하더랜다. 자바스크립트, blog등을 vscode로 사용하고 있던 나로서는, vscode의 단축키 기능을 사용하지 못하는 것 (엄격하게 말하자면, 새로운 단축키를 익혀야 한다는것)이 못내 번거로운 일이었는데, 심지어 학교에서도 그냥">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2018-05-10T07:16:39.976Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vscode 자바 개발환경 설정">
+<meta name="twitter:description" content="학기가 시작하기 전 나름대로의 예습(?)으로 생코 튜토리얼을 보며 자바를 독학하고 있었는데 생코에서는 IDE를 이클립스를 사용하더랜다. 자바스크립트, blog등을 vscode로 사용하고 있던 나로서는, vscode의 단축키 기능을 사용하지 못하는 것 (엄격하게 말하자면, 새로운 단축키를 익혀야 한다는것)이 못내 번거로운 일이었는데, 심지어 학교에서도 그냥">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-java-enviorment" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vscode 자바 개발환경 설정
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>학기가 시작하기 전 나름대로의 예습(?)으로 생코 튜토리얼을 보며 자바를 독학하고 있었는데 생코에서는 IDE를 이클립스를 사용하더랜다. 자바스크립트, blog등을 vscode로 사용하고 있던 나로서는, vscode의 단축키 기능을 사용하지 못하는 것 (엄격하게 말하자면, 새로운 단축키를 익혀야 한다는것)이 못내 번거로운 일이었는데, 심지어 학교에서도 그냥 너네가 쓰고 싶은 IDE 써 라는 수업스타일을 보여준 이후에는 더더욱 낯선 이클립스로 옮겨타고 싶지 않았다. 그렇게 검색 검색을 통해 적용한 vscode 개발환경 설정! 이클립스를 사용할떄처럼 bin/, src/ 디렉토리가 나눠져 보기좋게 정리된 것은 아니나 아직 프로젝트를 하지 않는 나로서는 익숙한 IDE를 사용하게 되어 더 없이 편리하다. 사실, 인터넷에서는 맥 자바 환경변수 설정과 같은 정보가 많이 있는데 대부분이 jdk버전을 확인한 후 &gt; Contents &gt; Home &gt; vi 입력모드에서 수정하는 방법이었다. 그런데 이상하게도 내 컴퓨터는 먹히질 않았단 말이지 (지금도 왜 그런것인지는 알수가 없다 궁금 궁금!) </p>
+<p>결국 나는 다른 방법을 찾아 (심지어 매우 간단!) 적용했고, 나와 같이 생초짜인 누군가, 또는 뉴 컴퓨터에서 이러한 상황을 다시 마주칠 언젠가를 위해 기록해둠.</p>
+<p>*ps. mac os 기준!</p>
+<hr>
+<h3 id="1-jdk-버전-확인하기"><a href="#1-jdk-버전-확인하기" class="headerlink" title="1. jdk 버전 확인하기"></a>1. jdk 버전 확인하기</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> $ <span class="built_in">cd</span> /Library/Java/JavaVirtualMachines/ </div><div class="line"> $ ls</div><div class="line"> // 자신의 jdk 버전을 확인하자</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">// $ <span class="built_in">cd</span> ~ 명령어로 부터 시작한 Library가 아님을 알자</div><div class="line">sunny@Sunnys-MacBook-Pro:~$ <span class="built_in">cd</span> ..</div><div class="line">sunny@Sunnys-MacBook-Pro:/Users$ <span class="built_in">cd</span> ..</div><div class="line">sunny@Sunnys-MacBook-Pro:/$ </div><div class="line">sunny@Sunnys-MacBook-Pro:/$ ls</div><div class="line">// 이제 여기에서 나오는 리스트의 Library다</div></pre></td></tr></table></figure>
+<h3 id="2-install-vscode-Extension"><a href="#2-install-vscode-Extension" class="headerlink" title="2. install vscode Extension"></a>2. install vscode Extension</h3><p>Language Support for Java(TM) by Red Hat</p>
+<h3 id="3-vscode-User-settings"><a href="#3-vscode-User-settings" class="headerlink" title="3. vscode User settings"></a>3. vscode User settings</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 1번에서 확인한 jdk 버전</div><div class="line">"java.home" : "/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home",</div><div class="line">    "code-runner.runInTerminal": true,</div><div class="line">    "java.errors.incompleteClasspath.severity": "ignore"</div></pre></td></tr></table></figure>
+<p>이렇게 하면 vscode안에서도 Scanner 콘솔에서 값 입력하기까지 확인해볼 수 있는 환경이 조성. 너무너무너무너무나 간단하고 기존에 vscode를 사용하던 사람이라면 다른 IDE로 옮겨탈 필요없이 사용 가능.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/05/10/java-enviorment/" class="article-date">
+  <time datetime="2018-05-10T04:51:31.000Z" itemprop="datePublished">2018-05-10</time>
+</a>
+
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+
+          </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/05/11/TIL-180511/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TIL-180511 자바 고객관리 프로그램.v3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/10/TIL-180510/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TIL_180510 자바 고객관리 프로그램.v2</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

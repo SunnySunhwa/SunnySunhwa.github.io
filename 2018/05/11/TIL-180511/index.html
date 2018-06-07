@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>TIL_180510 자바 고객관리 프로그램.v2 | Sunny&#39;s Blog</title>
+  <title>TIL-180511 자바 고객관리 프로그램.v3 | Sunny&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="오늘은 java.util.Scanner를 이용해 새로운 고객정보를 사용자로부터 입력받는 기능을 만들었다. 사용자는 프로그램이 사전에 준비한 질문에 대답을 입력하고, 그 대답은 새로운 인스턴스의 값으로 들어와 인스턴스가 생성! 여기에 while문을 통해 한번 실행 후 꺼지지 않도록 한다. 자바 고객관리 프로그램.v2 기능 계속해서 반복하기 위한 반복문 whi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TIL_180510 자바 고객관리 프로그램.v2">
-<meta property="og:url" content="https://SunnySunhwa.github.io/2018/05/10/TIL-180510/index.html">
+<meta property="og:title" content="TIL-180511 자바 고객관리 프로그램.v3">
+<meta property="og:url" content="https://SunnySunhwa.github.io/2018/05/11/TIL-180511/index.html">
 <meta property="og:site_name" content="Sunny&#39;s Blog">
 <meta property="og:description" content="오늘은 java.util.Scanner를 이용해 새로운 고객정보를 사용자로부터 입력받는 기능을 만들었다. 사용자는 프로그램이 사전에 준비한 질문에 대답을 입력하고, 그 대답은 새로운 인스턴스의 값으로 들어와 인스턴스가 생성! 여기에 while문을 통해 한번 실행 후 꺼지지 않도록 한다. 자바 고객관리 프로그램.v2 기능 계속해서 반복하기 위한 반복문 whi">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-05-17T02:59:53.000Z">
+<meta property="og:updated_time" content="2018-05-10T04:35:06.787Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TIL_180510 자바 고객관리 프로그램.v2">
+<meta name="twitter:title" content="TIL-180511 자바 고객관리 프로그램.v3">
 <meta name="twitter:description" content="오늘은 java.util.Scanner를 이용해 새로운 고객정보를 사용자로부터 입력받는 기능을 만들었다. 사용자는 프로그램이 사전에 준비한 질문에 대답을 입력하고, 그 대답은 새로운 인스턴스의 값으로 들어와 인스턴스가 생성! 여기에 while문을 통해 한번 실행 후 꺼지지 않도록 한다. 자바 고객관리 프로그램.v2 기능 계속해서 반복하기 위한 반복문 whi">
   
   
@@ -30,7 +30,7 @@
     
   
       <div id="container" class="container">
-        <article id="post-TIL-180510" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-TIL-180511" class="article article-type-post" itemscope itemprop="blogPost">
   <header id="header" class="header">
   <nav id="main-nav" class="main-nav">
     
@@ -51,7 +51,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      TIL_180510 자바 고객관리 프로그램.v2
+      TIL-180511 자바 고객관리 프로그램.v3
     </h1>
   
 
@@ -72,8 +72,7 @@
 <p><strong>3. main Method { }</strong><br>-while문 반복<br>-showMenu()실행<br>-각 메뉴별 실행될 구문 작성 (switch문)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomerInfo</span> </span>&#123;</div><div class="line">  <span class="keyword">int</span> no;</div><div class="line">  <span class="keyword">int</span> bal;</div><div class="line">  <span class="keyword">int</span> li;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">CustomerInfo</span><span class="params">(<span class="keyword">int</span> no, <span class="keyword">int</span> bal, <span class="keyword">int</span> li)</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.no = no;</div><div class="line">    <span class="keyword">this</span>.bal = bal;</div><div class="line">    <span class="keyword">this</span>.li = li;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showCustomerInfo</span><span class="params">()</span></span>&#123;</div><div class="line">    System.out.println(<span class="string">"No: "</span> + no + <span class="string">"\n"</span> + <span class="string">"bal:"</span> + bal + <span class="string">"\n"</span> + <span class="string">"li:"</span> + li);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomerManage2</span> </span>&#123;</div><div class="line">  <span class="comment">// static을 붙이지 않으면 에러가 발생!!!</span></div><div class="line">  <span class="keyword">static</span> Scanner key = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showMenu</span><span class="params">()</span></span>&#123;</div><div class="line">    System.out.println(<span class="string">"******************"</span>);</div><div class="line">    System.out.println(<span class="string">"Please Select Menu"</span>);</div><div class="line">    System.out.println(<span class="string">"1. Add to customer"</span>);</div><div class="line">    System.out.println(<span class="string">"2. Exit program"</span>);</div><div class="line">    System.out.println(<span class="string">"******************"</span>);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">inputData</span><span class="params">()</span></span>&#123;</div><div class="line">    System.out.print(<span class="string">"Type New Customer NO: "</span>);</div><div class="line">    <span class="keyword">int</span> no = key.nextInt();</div><div class="line">    System.out.print(<span class="string">"Input new customer's Bal: "</span>);</div><div class="line">    <span class="keyword">int</span> bal = key.nextInt();</div><div class="line">    System.out.print(<span class="string">"Input new custoemr's Li:1 "</span>);</div><div class="line">    <span class="keyword">int</span> li = key.nextInt();</div><div class="line">    </div><div class="line">    CustomerInfo newInfo = <span class="keyword">new</span> CustomerInfo(no, bal, li);</div><div class="line">    System.out.println(<span class="string">"******************"</span>);</div><div class="line">    System.out.println(<span class="string">"Check and Make sure what you input"</span>);</div><div class="line">    newInfo.showCustomerInfo();</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">    <span class="comment">// selection virable</span></div><div class="line">    <span class="keyword">int</span> sel;</div><div class="line">    <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">      showMenu();</div><div class="line">      sel = key.nextInt();</div><div class="line">      <span class="keyword">switch</span>(sel)&#123;</div><div class="line">        <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">          inputData();</div><div class="line">          <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">          System.out.println(<span class="string">"----Exit----"</span>);</div><div class="line">          <span class="keyword">return</span>; </div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
-<h4 id="1-구조-설계의-어려움"><a href="#1-구조-설계의-어려움" class="headerlink" title="1. 구조 설계의 어려움"></a>1. 구조 설계의 어려움</h4><p>v2에서 구현할 기능을 작성하는 것은 순조로웠으나, 구조를 설계할때에 한참을 헤맸다. 자바스크립트를 배우던 시절에도 그랬는데, 컴퓨터사고(?)가 아직 익숙하지 않은 나로써는 어디에 메소드를 선언하고, 그 메소드를 어디서 실행하며 그 함수는 어디에서 받아온 값을 매개변수로 삼아 실행되는 것인지와 같은 구조 설계가 참으로!!! 약하다. v1은 복잡한 내용이 하나도 없어서 이렇게 짜면 어느 부분에서 참으로 불편하겠구나 했는데, v2는 어떤 장,단점이 있을지 파악하기 어렵다 :( 짜는 것도 뭐 힘들게 짰는데 뭐..암튼, 다른 사람이 이런 내용의 코드를 짰다면 어떤 식으로 설계했는지 한번 보고 싶다! 참고좀 해보게</p>
-<h4 id="2-Static-Issue"><a href="#2-Static-Issue" class="headerlink" title="2. Static Issue"></a>2. Static Issue</h4><p>Scanner 생성자를 메인 메소드가 아니라 클래스안에 포함한 것은 이번이 처음인데, 어쩐지 빨간줄이 직직- 가고 에러가 발생. “non-static variable key cannot be referenced from a static context” stack overflow를 참고해 scanner 앞에 static을 명시해주는 것으로 해결은 봤으나 이유는 모르겠는??? 아무래도 자바라는 언어 사용법을 안것이지, 이해가 있는것은 아닌터라 이런 부분이 나타나면 무엇때문인지 감이 전혀 없다..ㅜ 좀 찾아봐야할듯. 아무튼 static을 붙여주는것으로 해결은 봄.</p>
+<h4 id="1-구조-설계의-어려움"><a href="#1-구조-설계의-어려움" class="headerlink" title="1. 구조 설계의 어려움"></a>1. 구조 설계의 어려움</h4><p>v2에서 구현할 기능을 작성하는 것은 순조로웠으나, 구조를 설계할때에 한참을 헤맸다. 자바스크립트를 할때에도 그랬는데, 컴퓨터사고(?)가 거의 불가능하다시피 안되는 나로써는 어디에 메소드를 선언하고, 그 메소드를 어디서 실행하며 그 함수는 어디에서 받아온 값을 매개변수로 삼아 실행되는 것인지와 같은 구조 설계가 참으로!!! 약하다. v1은 복잡한 내용이 하나도 없어서 이렇게 짜면 어느 부분에서 참으로 불편하겠구나 했는데, v2는 어떤 장,단점이 있을지 파악하기 어렵다 :( 짜는 것도 뭐 힘들게 짰는데 뭐..암튼, 다른 사람이 이런 내용의 코드를 짰다면 어떤 식으로 설계했는지 한번 보고 싶다! 참고좀 해보게</p>
 
       
     </div>
@@ -81,8 +80,8 @@
       <ul class="article-meta">
         <li>
           <span class="label">Published Date:</span>
-          <a href="/2018/05/10/TIL-180510/" class="article-date">
-  <time datetime="2018-05-10T03:14:10.000Z" itemprop="datePublished">2018-05-10</time>
+          <a href="/2018/05/11/TIL-180511/" class="article-date">
+  <time datetime="2018-05-11T04:13:55.000Z" itemprop="datePublished">2018-05-11</time>
 </a>
 
         </li>
@@ -106,19 +105,19 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <a href="/2018/05/10/java-enviorment/" id="article-nav-newer" class="article-nav-link-wrap newer">
+    <a href="/2018/06/07/TIL-180607/" id="article-nav-newer" class="article-nav-link-wrap newer">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          vscode 자바 개발환경 설정
+          TIL_180607 다양한 정렬검색을 통한 학생점수 관리 프로그램
         
       </div>
     </a>
   
   
-    <a href="/2018/05/09/TIL-180509/" id="article-nav-older" class="article-nav-link-wrap older">
+    <a href="/2018/05/10/java-enviorment/" id="article-nav-older" class="article-nav-link-wrap older">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">TIL_180509 자바 고객관리 프로그램.v1</div>
+      <div class="article-nav-title">vscode 자바 개발환경 설정</div>
     </a>
   
 </nav>
