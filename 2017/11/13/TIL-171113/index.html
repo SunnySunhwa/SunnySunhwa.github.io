@@ -59,7 +59,7 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/archives/">Home</a></li>
+          <li><a href="/archives/">all</a></li>
          
           <li><a href="/categories/html-css">html/css</a></li>
          
@@ -85,10 +85,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -147,7 +147,7 @@
 
   <div class="content" itemprop="articleBody">
     <p><strong>컴포넌트 대상화</strong><br>재사용의 가능성이 있는 부분이라면(기능) 컴포넌트화해서 분리</p>
-<h2 id="컴포넌트간-상태공유"><a href="#컴포넌트간-상태공유" class="headerlink" title="컴포넌트간 상태공유"></a>컴포넌트간 상태공유</h2><h3 id="1-부모-gt-자식-프로퍼티-바인딩-Input"><a href="#1-부모-gt-자식-프로퍼티-바인딩-Input" class="headerlink" title="1. 부모 -&gt; 자식: 프로퍼티 바인딩, @Input"></a>1. 부모 -&gt; 자식: 프로퍼티 바인딩, @Input</h3><h4 id="1-1-부모-–-gt-보낼때"><a href="#1-1-부모-–-gt-보낼때" class="headerlink" title="1-1) 부모 –&gt; 보낼때"></a>1-1) 부모 –&gt; 보낼때</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;child [state]=<span class="string">"myState"</span>&gt;&lt;/child&gt;</div></pre></td></tr></table></figure>
+<h2 id="컴포넌트간-상태공유"><a href="#컴포넌트간-상태공유" class="headerlink" title="컴포넌트간 상태공유"></a>컴포넌트간 상태공유</h2><h3 id="1-부모-gt-자식-프로퍼티-바인딩-Input"><a href="#1-부모-gt-자식-프로퍼티-바인딩-Input" class="headerlink" title="1. 부모 -&gt; 자식: 프로퍼티 바인딩, @Input"></a>1. 부모 -&gt; 자식: 프로퍼티 바인딩, @Input</h3><h4 id="1-1-부모-–-gt-보낼때"><a href="#1-1-부모-–-gt-보낼때" class="headerlink" title="1-1) 부모 –&gt; 보낼때"></a>1-1) 부모 –&gt; 보낼때</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;child [state]=<span class="string">"myState"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <h4 id="1-2-–-gt-자식-받을때"><a href="#1-2-–-gt-자식-받을때" class="headerlink" title="1-2) –&gt; 자식 받을때"></a>1-2) –&gt; 자식 받을때</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@Input() state: string</div></pre></td></tr></table></figure>
 <ul>
 <li>즉, [property-binding] state | myState<br>-&gt; ‘state’라는 하나의 매개체만을 가지고 느슨한 결합상태를 유지</li>
@@ -199,7 +199,7 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/archives/">Home</a></li>
+          <li><a href="/archives/">all</a></li>
          
           <li><a href="/categories/html-css">html/css</a></li>
          
@@ -235,10 +235,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
     </div>
 
   </div>
@@ -253,7 +253,7 @@
     <nav>
       <ul>
          
-          <li><a href="/archives/">Home</a></li>
+          <li><a href="/archives/">all</a></li>
          
           <li><a href="/categories/html-css">html/css</a></li>
          
