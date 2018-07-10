@@ -1,65 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=ko>
 <head>
-  <meta charset="utf-8">
-  
-  <title>TIL_170911-23 Html/CSS layout 관련 | Sunny&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="display: flex; http://flexboxfroggy.com/ ie 11이상 부터 구현 가능 (원활하지 않음) flex아이템은 자식요소가 부모요소의  width값을 넘어도 float처럼 레이아웃이 틀어지지 않음 부모 요소에 주어야함 저절로 비율값으로 축소되서 나타남 열을 변경하고 싶다면, flex-wrap을 사용  A, flex-direction">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="display: flex; http://flexboxfroggy.com/ ie 11이상 부터 구현 가능 (원활하지 않음) flex아이템은 자식요소가 부모요소의  width값을 넘어도 float처럼 레이아웃이 틀어지지 않음 부모 요소에 주어야함 저절로 비율값으로 축소되서 나타남 열을 변경하고 싶다면, flex-wrap을 사용  A, flex-direction">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL_170911-23 Html&#x2F;CSS layout 관련">
 <meta property="og:url" content="https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/index.html">
 <meta property="og:site_name" content="Sunny&#39;s Blog">
 <meta property="og:description" content="display: flex; http://flexboxfroggy.com/ ie 11이상 부터 구현 가능 (원활하지 않음) flex아이템은 자식요소가 부모요소의  width값을 넘어도 float처럼 레이아웃이 틀어지지 않음 부모 요소에 주어야함 저절로 비율값으로 축소되서 나타남 열을 변경하고 싶다면, flex-wrap을 사용  A, flex-direction">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2017-10-09T09:36:23.000Z">
+<meta property="og:updated_time" content="2018-07-10T05:49:52.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL_170911-23 Html&#x2F;CSS layout 관련">
 <meta name="twitter:description" content="display: flex; http://flexboxfroggy.com/ ie 11이상 부터 구현 가능 (원활하지 않음) flex아이템은 자식요소가 부모요소의  width값을 넘어도 float처럼 레이아웃이 틀어지지 않음 부모 요소에 주어야함 저절로 비율값으로 축소되서 나타남 열을 변경하고 싶다면, flex-wrap을 사용  A, flex-direction">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
-  
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/archives/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/archives/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/archives/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>TIL_170911-23 Html/CSS layout 관련</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/archives/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/archives/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 </head>
 
-  
+<body class="max-width mx-auto px3 ltr">
     
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-TIL-170911-23_layout" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-</header>
-
-  <hr/>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/archives/archives">Inici</a></li>
+         
+          <li><a href="/archives/categories/html-css">html/css</a></li>
+         
+          <li><a href="/archives/categories/javascript">javascript</a></li>
+         
+          <li><a href="/archives/categories/Java">java</a></li>
+         
+          <li><a href="/archives/categories/dev-others">dev-others</a></li>
+         
+          <li><a href="/archives/categories/nz">nz-life</a></li>
         
-  
-    <h1 class="article-title" itemprop="name">
-      TIL_170911-23 Html/CSS layout 관련
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/archives/2017/09/23/TIL-170911-23-property/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/archives/2017/09/11/TIL-170911_setting/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&text=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&title=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&is_video=false&description=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIL_170911-23 Html/CSS layout 관련&body=Check out this article: https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&title=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&title=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&title=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&title=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&name=TIL_170911-23 Html/CSS layout 관련&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#display-flex"><span class="toc-number">1.</span> <span class="toc-text">display: flex;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-flex-direction"><span class="toc-number">1.0.1.</span> <span class="toc-text">A, flex-direction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-justify-content"><span class="toc-number">1.0.2.</span> <span class="toc-text">A, justify-content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-align-items"><span class="toc-number">1.0.3.</span> <span class="toc-text">A, align-items</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#order"><span class="toc-number">1.0.4.</span> <span class="toc-text">order</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-content"><span class="toc-number">1.0.5.</span> <span class="toc-text">align-content:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#display-grid"><span class="toc-number">2.</span> <span class="toc-text">display: grid</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#display-float"><span class="toc-number">3.</span> <span class="toc-text">display: float</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#자식요소의-높이-감지못하는-float-문제-해결방안"><span class="toc-number">3.1.</span> <span class="toc-text">자식요소의 높이 감지못하는 float 문제 해결방안</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Position-속성값-특징"><span class="toc-number">3.2.</span> <span class="toc-text">Position 속성값 특징</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        TIL_170911-23 Html/CSS layout 관련
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Sunny's Blog</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-09-23T04:42:08.000Z" itemprop="datePublished">2017-09-23</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
   
 
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <h1 id="display-flex"><a href="#display-flex" class="headerlink" title="display: flex;"></a>display: flex;</h1><ul>
+  <div class="content" itemprop="articleBody">
+    <h1 id="display-flex"><a href="#display-flex" class="headerlink" title="display: flex;"></a>display: flex;</h1><ul>
 <li><a href="http://flexboxfroggy.com/" target="_blank" rel="external">http://flexboxfroggy.com/</a></li>
 <li>ie 11이상 부터 구현 가능 (원활하지 않음)</li>
 <li>flex아이템은 자식요소가 부모요소의  width값을 넘어도 float처럼 레이아웃이 틀어지지 않음</li>
@@ -160,95 +241,106 @@
 </li>
 </ol>
 
-      
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/09/23/TIL-170911-23_layout/" class="article-date">
-  <time datetime="2017-09-23T04:42:08.000Z" itemprop="datePublished">2017-09-23</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/html-css/">html/css</a>
   </div>
-
-
-          </li>
-        
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/09/23/TIL-170911-23-property/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          TIL_170911-23 Html:tag / CSS:property
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/09/11/TIL-170911_setting/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">TIL_html/CSS 작업환경세팅</div>
-    </a>
-  
-</nav>
-
-
-  
 </article>
 
 
 
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
 
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/archives/archives">Inici</a></li>
+         
+          <li><a href="/archives/categories/html-css">html/css</a></li>
+         
+          <li><a href="/archives/categories/javascript">javascript</a></li>
+         
+          <li><a href="/archives/categories/Java">java</a></li>
+         
+          <li><a href="/archives/categories/dev-others">dev-others</a></li>
+         
+          <li><a href="/archives/categories/nz">nz-life</a></li>
+        
+      </ul>
+    </div>
 
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#display-flex"><span class="toc-number">1.</span> <span class="toc-text">display: flex;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-flex-direction"><span class="toc-number">1.0.1.</span> <span class="toc-text">A, flex-direction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-justify-content"><span class="toc-number">1.0.2.</span> <span class="toc-text">A, justify-content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-align-items"><span class="toc-number">1.0.3.</span> <span class="toc-text">A, align-items</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#order"><span class="toc-number">1.0.4.</span> <span class="toc-text">order</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-content"><span class="toc-number">1.0.5.</span> <span class="toc-text">align-content:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#display-grid"><span class="toc-number">2.</span> <span class="toc-text">display: grid</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#display-float"><span class="toc-number">3.</span> <span class="toc-text">display: float</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#자식요소의-높이-감지못하는-float-문제-해결방안"><span class="toc-number">3.1.</span> <span class="toc-text">자식요소의 높이 감지못하는 float 문제 해결방안</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Position-속성값-특징"><span class="toc-number">3.2.</span> <span class="toc-text">Position 속성값 특징</span></a></li></ol></li></ol>
+    </div>
 
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
-
-
-      </div>
-    </footer>
-
-      
-
-
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&text=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&title=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&is_video=false&description=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIL_170911-23 Html/CSS layout 관련&body=Check out this article: https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&title=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&title=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&title=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&title=TIL_170911-23 Html/CSS layout 관련"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://SunnySunhwa.github.io/2017/09/23/TIL-170911-23_layout/&name=TIL_170911-23 Html/CSS layout 관련&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
 
     </div>
-  </body>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Sunny Sunhwa Kim
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/archives/archives">Inici</a></li>
+         
+          <li><a href="/archives/categories/html-css">html/css</a></li>
+         
+          <li><a href="/archives/categories/javascript">javascript</a></li>
+         
+          <li><a href="/archives/categories/Java">java</a></li>
+         
+          <li><a href="/archives/categories/dev-others">dev-others</a></li>
+         
+          <li><a href="/archives/categories/nz">nz-life</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/archives/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/archives/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/archives/lib/jquery/jquery.min.js"></script>
+<script src="/archives/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/archives/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+

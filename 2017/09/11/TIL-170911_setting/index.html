@@ -1,65 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=ko>
 <head>
-  <meta charset="utf-8">
-  
-  <title>TIL_html/CSS 작업환경세팅 | Sunny&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="환경설정vs Code 환경설정vs code extentions live server JS-CSS-HTML formatter Path Autocomplete  key map Atom  명령어팔레트 &amp;gt; formatter config* js, css, html의 indent size : 2  firefox, chrome extentions Web Devel">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="환경설정vs Code 환경설정vs code extentions live server JS-CSS-HTML formatter Path Autocomplete  key map Atom  명령어팔레트 &amp;gt; formatter config* js, css, html의 indent size : 2  firefox, chrome extentions Web Devel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL_html&#x2F;CSS 작업환경세팅">
 <meta property="og:url" content="https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/index.html">
 <meta property="og:site_name" content="Sunny&#39;s Blog">
 <meta property="og:description" content="환경설정vs Code 환경설정vs code extentions live server JS-CSS-HTML formatter Path Autocomplete  key map Atom  명령어팔레트 &amp;gt; formatter config* js, css, html의 indent size : 2  firefox, chrome extentions Web Devel">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2017-10-09T09:42:10.000Z">
+<meta property="og:updated_time" content="2018-07-10T05:49:45.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL_html&#x2F;CSS 작업환경세팅">
 <meta name="twitter:description" content="환경설정vs Code 환경설정vs code extentions live server JS-CSS-HTML formatter Path Autocomplete  key map Atom  명령어팔레트 &amp;gt; formatter config* js, css, html의 indent size : 2  firefox, chrome extentions Web Devel">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
-  
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/archives/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/archives/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/archives/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>TIL_html/CSS 작업환경세팅</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/archives/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/archives/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 </head>
 
-  
+<body class="max-width mx-auto px3 ltr">
     
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="til:-TIL-170911_setting" class="article article-type-til:" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-</header>
-
-  <hr/>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/archives/archives">Inici</a></li>
+         
+          <li><a href="/archives/categories/html-css">html/css</a></li>
+         
+          <li><a href="/archives/categories/javascript">javascript</a></li>
+         
+          <li><a href="/archives/categories/Java">java</a></li>
+         
+          <li><a href="/archives/categories/dev-others">dev-others</a></li>
+         
+          <li><a href="/archives/categories/nz">nz-life</a></li>
         
-  
-    <h1 class="article-title" itemprop="name">
-      TIL_html/CSS 작업환경세팅
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/archives/2017/09/23/TIL-170911-23_layout/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&text=TIL_html/CSS 작업환경세팅"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&title=TIL_html/CSS 작업환경세팅"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&is_video=false&description=TIL_html/CSS 작업환경세팅"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIL_html/CSS 작업환경세팅&body=Check out this article: https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&title=TIL_html/CSS 작업환경세팅"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&title=TIL_html/CSS 작업환경세팅"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&title=TIL_html/CSS 작업환경세팅"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&title=TIL_html/CSS 작업환경세팅"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&name=TIL_html/CSS 작업환경세팅&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#환경설정"><span class="toc-number">1.</span> <span class="toc-text">환경설정</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vs-Code-환경설정"><span class="toc-number">1.1.</span> <span class="toc-text">vs Code 환경설정</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vs-code-extentions"><span class="toc-number">1.1.1.</span> <span class="toc-text">vs code extentions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#key-map"><span class="toc-number">1.1.2.</span> <span class="toc-text">key map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#명령어팔레트-gt-formatter-config"><span class="toc-number">1.1.3.</span> <span class="toc-text">명령어팔레트 > formatter config*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#firefox-chrome-extentions"><span class="toc-number">1.1.4.</span> <span class="toc-text">firefox, chrome extentions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#normalize-css"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">normalize.css</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reset-css"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">reset.css</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css-minified-uglyfied"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">css- minified, uglyfied</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#www-w3-org-Style-CSS-current-work"><span class="toc-number">1.1.5.</span> <span class="toc-text">www.w3.org/Style/CSS/current-work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Font-Awesome"><span class="toc-number">1.1.6.</span> <span class="toc-text">Font Awesome</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#단축키-emmet"><span class="toc-number">1.2.</span> <span class="toc-text">단축키 (emmet)</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        TIL_html/CSS 작업환경세팅
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Sunny's Blog</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-09-11T05:22:01.000Z" itemprop="datePublished">2017-09-11</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
   
 
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <h1 id="환경설정"><a href="#환경설정" class="headerlink" title="환경설정"></a>환경설정</h1><h2 id="vs-Code-환경설정"><a href="#vs-Code-환경설정" class="headerlink" title="vs Code 환경설정"></a>vs Code 환경설정</h2><h3 id="vs-code-extentions"><a href="#vs-code-extentions" class="headerlink" title="vs code extentions"></a>vs code extentions</h3><ul>
+  <div class="content" itemprop="articleBody">
+    <h1 id="환경설정"><a href="#환경설정" class="headerlink" title="환경설정"></a>환경설정</h1><h2 id="vs-Code-환경설정"><a href="#vs-Code-환경설정" class="headerlink" title="vs Code 환경설정"></a>vs Code 환경설정</h2><h3 id="vs-code-extentions"><a href="#vs-code-extentions" class="headerlink" title="vs code extentions"></a>vs code extentions</h3><ul>
 <li>live server</li>
 <li>JS-CSS-HTML formatter</li>
 <li>Path Autocomplete</li>
@@ -102,92 +181,106 @@
 <li>Alt + 방향키 : 해당 커서 줄 옮기기</li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/09/11/TIL-170911_setting/" class="article-date">
-  <time datetime="2017-09-11T05:22:01.000Z" itemprop="datePublished">2017-09-11</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/html-css/">html/css</a>
   </div>
-
-
-          </li>
-        
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/09/23/TIL-170911-23_layout/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          TIL_170911-23 Html/CSS layout 관련
-        
-      </div>
-    </a>
-  
-  
-    <span id="article-nav-older" class="article-nav-link-wrap older"></span>
-  
-</nav>
-
-
-  
 </article>
 
 
 
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
 
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/archives/archives">Inici</a></li>
+         
+          <li><a href="/archives/categories/html-css">html/css</a></li>
+         
+          <li><a href="/archives/categories/javascript">javascript</a></li>
+         
+          <li><a href="/archives/categories/Java">java</a></li>
+         
+          <li><a href="/archives/categories/dev-others">dev-others</a></li>
+         
+          <li><a href="/archives/categories/nz">nz-life</a></li>
+        
+      </ul>
+    </div>
 
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#환경설정"><span class="toc-number">1.</span> <span class="toc-text">환경설정</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vs-Code-환경설정"><span class="toc-number">1.1.</span> <span class="toc-text">vs Code 환경설정</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vs-code-extentions"><span class="toc-number">1.1.1.</span> <span class="toc-text">vs code extentions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#key-map"><span class="toc-number">1.1.2.</span> <span class="toc-text">key map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#명령어팔레트-gt-formatter-config"><span class="toc-number">1.1.3.</span> <span class="toc-text">명령어팔레트 > formatter config*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#firefox-chrome-extentions"><span class="toc-number">1.1.4.</span> <span class="toc-text">firefox, chrome extentions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#normalize-css"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">normalize.css</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reset-css"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">reset.css</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css-minified-uglyfied"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">css- minified, uglyfied</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#www-w3-org-Style-CSS-current-work"><span class="toc-number">1.1.5.</span> <span class="toc-text">www.w3.org/Style/CSS/current-work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Font-Awesome"><span class="toc-number">1.1.6.</span> <span class="toc-text">Font Awesome</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#단축키-emmet"><span class="toc-number">1.2.</span> <span class="toc-text">단축키 (emmet)</span></a></li></ol></li></ol>
+    </div>
 
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
-
-
-      </div>
-    </footer>
-
-      
-
-
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&text=TIL_html/CSS 작업환경세팅"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&title=TIL_html/CSS 작업환경세팅"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&is_video=false&description=TIL_html/CSS 작업환경세팅"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIL_html/CSS 작업환경세팅&body=Check out this article: https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&title=TIL_html/CSS 작업환경세팅"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&title=TIL_html/CSS 작업환경세팅"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&title=TIL_html/CSS 작업환경세팅"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&title=TIL_html/CSS 작업환경세팅"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://SunnySunhwa.github.io/2017/09/11/TIL-170911_setting/&name=TIL_html/CSS 작업환경세팅&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
 
     </div>
-  </body>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Sunny Sunhwa Kim
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/archives/archives">Inici</a></li>
+         
+          <li><a href="/archives/categories/html-css">html/css</a></li>
+         
+          <li><a href="/archives/categories/javascript">javascript</a></li>
+         
+          <li><a href="/archives/categories/Java">java</a></li>
+         
+          <li><a href="/archives/categories/dev-others">dev-others</a></li>
+         
+          <li><a href="/archives/categories/nz">nz-life</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/archives/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/archives/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/archives/lib/jquery/jquery.min.js"></script>
+<script src="/archives/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/archives/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+

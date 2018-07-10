@@ -1,65 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=ko>
 <head>
-  <meta charset="utf-8">
-  
-  <title>TIL_DOM의 접근과 수정, Event | Sunny&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DOM1. Dom tree 문서노드 (Document Node) 요소노드 (Element Node) 속성노드 (Attribute Node) 텍스트노드 (Text Node)  2. DOM Query (접근) 실무에서는 잘 사용X -&amp;gt; but, 제이쿼리/앵귤러등을 활용하는 기본원리는 같음 (기본 이론) 여러개를 가지고 올때는 ‘유사배열 객체’로 반환 따라">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="DOM1. Dom tree 문서노드 (Document Node) 요소노드 (Element Node) 속성노드 (Attribute Node) 텍스트노드 (Text Node)  2. DOM Query (접근) 실무에서는 잘 사용X -&amp;gt; but, 제이쿼리/앵귤러등을 활용하는 기본원리는 같음 (기본 이론) 여러개를 가지고 올때는 ‘유사배열 객체’로 반환 따라">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL_DOM의 접근과 수정, Event">
 <meta property="og:url" content="https://SunnySunhwa.github.io/2017/10/16/TIL_171016/index.html">
 <meta property="og:site_name" content="Sunny&#39;s Blog">
 <meta property="og:description" content="DOM1. Dom tree 문서노드 (Document Node) 요소노드 (Element Node) 속성노드 (Attribute Node) 텍스트노드 (Text Node)  2. DOM Query (접근) 실무에서는 잘 사용X -&amp;gt; but, 제이쿼리/앵귤러등을 활용하는 기본원리는 같음 (기본 이론) 여러개를 가지고 올때는 ‘유사배열 객체’로 반환 따라">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2017-10-17T02:54:56.000Z">
+<meta property="og:updated_time" content="2018-07-10T05:49:19.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL_DOM의 접근과 수정, Event">
 <meta name="twitter:description" content="DOM1. Dom tree 문서노드 (Document Node) 요소노드 (Element Node) 속성노드 (Attribute Node) 텍스트노드 (Text Node)  2. DOM Query (접근) 실무에서는 잘 사용X -&amp;gt; but, 제이쿼리/앵귤러등을 활용하는 기본원리는 같음 (기본 이론) 여러개를 가지고 올때는 ‘유사배열 객체’로 반환 따라">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
-  
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/archives/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/archives/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/archives/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>TIL_DOM의 접근과 수정, Event</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/archives/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/archives/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 </head>
 
-  
+<body class="max-width mx-auto px3 ltr">
     
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-TIL_171016" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-</header>
-
-  <hr/>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/archives/archives">Inici</a></li>
+         
+          <li><a href="/archives/categories/html-css">html/css</a></li>
+         
+          <li><a href="/archives/categories/javascript">javascript</a></li>
+         
+          <li><a href="/archives/categories/Java">java</a></li>
+         
+          <li><a href="/archives/categories/dev-others">dev-others</a></li>
+         
+          <li><a href="/archives/categories/nz">nz-life</a></li>
         
-  
-    <h1 class="article-title" itemprop="name">
-      TIL_DOM의 접근과 수정, Event
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/archives/2017/10/17/TIL-171017/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/archives/2017/10/12/TIL-171012/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&text=TIL_DOM의 접근과 수정, Event"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&title=TIL_DOM의 접근과 수정, Event"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&is_video=false&description=TIL_DOM의 접근과 수정, Event"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIL_DOM의 접근과 수정, Event&body=Check out this article: https://SunnySunhwa.github.io/2017/10/16/TIL_171016/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&title=TIL_DOM의 접근과 수정, Event"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&title=TIL_DOM의 접근과 수정, Event"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&title=TIL_DOM의 접근과 수정, Event"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&title=TIL_DOM의 접근과 수정, Event"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&name=TIL_DOM의 접근과 수정, Event&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM"><span class="toc-number">1.</span> <span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Dom-tree"><span class="toc-number">1.1.</span> <span class="toc-text">1. Dom tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DOM-Query-접근"><span class="toc-number">1.2.</span> <span class="toc-text">2. DOM Query (접근)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-하나-선택"><span class="toc-number">1.2.1.</span> <span class="toc-text">1) 하나 선택</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-여러개-선택"><span class="toc-number">1.2.2.</span> <span class="toc-text">2) 여러개 선택</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DOM-Traversing-탐색"><span class="toc-number">1.3.</span> <span class="toc-text">3. DOM Traversing (탐색)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#참고-JQeury를-사용하는-이유"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">[참고] JQeury를 사용하는 이유*</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-DOM-Manipulation-조작"><span class="toc-number">1.4.</span> <span class="toc-text">4. DOM Manipulation (조작)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-텍스트-노드-조작"><span class="toc-number">1.4.1.</span> <span class="toc-text">1) 텍스트 노드 조작</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-어트리뷰트-노드-조작"><span class="toc-number">1.4.2.</span> <span class="toc-text">2) 어트리뷰트 노드 조작</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#참고"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">[참고]*</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-HTML-콘텐츠-조작"><span class="toc-number">1.4.3.</span> <span class="toc-text">3) HTML 콘텐츠 조작</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#동기식-vs-비동기식-처리모델-Synchronous-vs-Asynchronous-processing-model"><span class="toc-number">2.</span> <span class="toc-text">동기식 vs 비동기식 처리모델 (Synchronous vs Asynchronous processing model)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#비동기"><span class="toc-number">2.1.</span> <span class="toc-text">비동기</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Event-Binding-3가지"><span class="toc-number">3.</span> <span class="toc-text">Event Binding (3가지)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-이벤트-핸들러"><span class="toc-number">3.0.1.</span> <span class="toc-text">1) 이벤트 핸들러</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-전통적-이벤트-핸들러"><span class="toc-number">3.0.2.</span> <span class="toc-text">2) 전통적 이벤트 핸들러</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Dom-Level-2-Event-Listener"><span class="toc-number">3.0.3.</span> <span class="toc-text">3) Dom Level 2 Event Listener</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#핸들러-함수-내부의-this"><span class="toc-number">3.1.</span> <span class="toc-text">핸들러 함수 내부의 this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-프로퍼티"><span class="toc-number">3.2.</span> <span class="toc-text">Event 프로퍼티</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Event-target-Event-currentTarget"><span class="toc-number">3.2.1.</span> <span class="toc-text">1) Event.target, Event.currentTarget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Event-cancelable"><span class="toc-number">3.2.2.</span> <span class="toc-text">2) Event.cancelable</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-Delegation-위임"><span class="toc-number">3.3.</span> <span class="toc-text">Event Delegation(위임)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#오늘의-느낀점"><span class="toc-number">4.</span> <span class="toc-text">오늘의 느낀점</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        TIL_DOM의 접근과 수정, Event
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Sunny's Blog</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-10-16T04:22:01.000Z" itemprop="datePublished">2017-10-16</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
   
 
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="1-Dom-tree"><a href="#1-Dom-tree" class="headerlink" title="1. Dom tree"></a>1. Dom tree</h2><ol>
+  <div class="content" itemprop="articleBody">
+    <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="1-Dom-tree"><a href="#1-Dom-tree" class="headerlink" title="1. Dom tree"></a>1. Dom tree</h2><ol>
 <li>문서노드 (Document Node)</li>
 <li>요소노드 (Element Node)</li>
 <li>속성노드 (Attribute Node)</li>
@@ -159,95 +240,106 @@
 <li>포스팅만 계속해서 보다보니 아무래도 읽었던 부분이라고 그냥 넘어가는 일이 생기고 하는 것같다. 좀더 꼼꼼하게 읽도록 한뒤 이제는 다른 책으로도 익혀봐야겠다 (인사이드 자바스크립트 주문!)</li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/10/16/TIL_171016/" class="article-date">
-  <time datetime="2017-10-16T04:22:01.000Z" itemprop="datePublished">2017-10-16</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
   </div>
-
-
-          </li>
-        
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/10/17/TIL-171017/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          TIL_171017 Ajax
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/10/12/TIL-171012/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">TIL_171012 실행컨텍스트 및 퀴즈</div>
-    </a>
-  
-</nav>
-
-
-  
 </article>
 
 
 
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
 
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/archives/archives">Inici</a></li>
+         
+          <li><a href="/archives/categories/html-css">html/css</a></li>
+         
+          <li><a href="/archives/categories/javascript">javascript</a></li>
+         
+          <li><a href="/archives/categories/Java">java</a></li>
+         
+          <li><a href="/archives/categories/dev-others">dev-others</a></li>
+         
+          <li><a href="/archives/categories/nz">nz-life</a></li>
+        
+      </ul>
+    </div>
 
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM"><span class="toc-number">1.</span> <span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Dom-tree"><span class="toc-number">1.1.</span> <span class="toc-text">1. Dom tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DOM-Query-접근"><span class="toc-number">1.2.</span> <span class="toc-text">2. DOM Query (접근)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-하나-선택"><span class="toc-number">1.2.1.</span> <span class="toc-text">1) 하나 선택</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-여러개-선택"><span class="toc-number">1.2.2.</span> <span class="toc-text">2) 여러개 선택</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DOM-Traversing-탐색"><span class="toc-number">1.3.</span> <span class="toc-text">3. DOM Traversing (탐색)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#참고-JQeury를-사용하는-이유"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">[참고] JQeury를 사용하는 이유*</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-DOM-Manipulation-조작"><span class="toc-number">1.4.</span> <span class="toc-text">4. DOM Manipulation (조작)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-텍스트-노드-조작"><span class="toc-number">1.4.1.</span> <span class="toc-text">1) 텍스트 노드 조작</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-어트리뷰트-노드-조작"><span class="toc-number">1.4.2.</span> <span class="toc-text">2) 어트리뷰트 노드 조작</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#참고"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">[참고]*</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-HTML-콘텐츠-조작"><span class="toc-number">1.4.3.</span> <span class="toc-text">3) HTML 콘텐츠 조작</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#동기식-vs-비동기식-처리모델-Synchronous-vs-Asynchronous-processing-model"><span class="toc-number">2.</span> <span class="toc-text">동기식 vs 비동기식 처리모델 (Synchronous vs Asynchronous processing model)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#비동기"><span class="toc-number">2.1.</span> <span class="toc-text">비동기</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Event-Binding-3가지"><span class="toc-number">3.</span> <span class="toc-text">Event Binding (3가지)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-이벤트-핸들러"><span class="toc-number">3.0.1.</span> <span class="toc-text">1) 이벤트 핸들러</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-전통적-이벤트-핸들러"><span class="toc-number">3.0.2.</span> <span class="toc-text">2) 전통적 이벤트 핸들러</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Dom-Level-2-Event-Listener"><span class="toc-number">3.0.3.</span> <span class="toc-text">3) Dom Level 2 Event Listener</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#핸들러-함수-내부의-this"><span class="toc-number">3.1.</span> <span class="toc-text">핸들러 함수 내부의 this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-프로퍼티"><span class="toc-number">3.2.</span> <span class="toc-text">Event 프로퍼티</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Event-target-Event-currentTarget"><span class="toc-number">3.2.1.</span> <span class="toc-text">1) Event.target, Event.currentTarget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Event-cancelable"><span class="toc-number">3.2.2.</span> <span class="toc-text">2) Event.cancelable</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-Delegation-위임"><span class="toc-number">3.3.</span> <span class="toc-text">Event Delegation(위임)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#오늘의-느낀점"><span class="toc-number">4.</span> <span class="toc-text">오늘의 느낀점</span></a></li></ol>
+    </div>
 
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
-
-
-      </div>
-    </footer>
-
-      
-
-
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&text=TIL_DOM의 접근과 수정, Event"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&title=TIL_DOM의 접근과 수정, Event"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&is_video=false&description=TIL_DOM의 접근과 수정, Event"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIL_DOM의 접근과 수정, Event&body=Check out this article: https://SunnySunhwa.github.io/2017/10/16/TIL_171016/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&title=TIL_DOM의 접근과 수정, Event"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&title=TIL_DOM의 접근과 수정, Event"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&title=TIL_DOM의 접근과 수정, Event"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&title=TIL_DOM의 접근과 수정, Event"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://SunnySunhwa.github.io/2017/10/16/TIL_171016/&name=TIL_DOM의 접근과 수정, Event&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
 
     </div>
-  </body>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Sunny Sunhwa Kim
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/archives/archives">Inici</a></li>
+         
+          <li><a href="/archives/categories/html-css">html/css</a></li>
+         
+          <li><a href="/archives/categories/javascript">javascript</a></li>
+         
+          <li><a href="/archives/categories/Java">java</a></li>
+         
+          <li><a href="/archives/categories/dev-others">dev-others</a></li>
+         
+          <li><a href="/archives/categories/nz">nz-life</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/archives/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/archives/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/archives/lib/jquery/jquery.min.js"></script>
+<script src="/archives/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/archives/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
