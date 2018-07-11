@@ -17,7 +17,6 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL-180511 자바 고객관리 프로그램.v3">
 <meta name="twitter:description" content="오늘은 java.util.Scanner를 이용해 새로운 고객정보를 사용자로부터 입력받는 기능을 만들었다. 사용자는 프로그램이 사전에 준비한 질문에 대답을 입력하고, 그 대답은 새로운 인스턴스의 값으로 들어와 인스턴스가 생성! 여기에 while문을 통해 한번 실행 후 꺼지지 않도록 한다. 자바 고객관리 프로그램.v2 기능 계속해서 반복하기 위한 반복문 whi">
-    
     <link rel="canonical" href="https://SunnySunhwa.github.io/2018/05/11/til-180511/"/>
 
     
@@ -45,11 +44,12 @@
     
       <link rel="stylesheet" href="/css/rtl.css">
     
+    <!-- Google Analytics -->
+    
+        
     <!-- rss -->
     
     
-<!-- Google Analytics -->
-
 </head>
 
 <body class="max-width mx-auto px3 ltr">
@@ -88,10 +88,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
-      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -208,10 +208,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
