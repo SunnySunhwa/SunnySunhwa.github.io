@@ -6,7 +6,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://SunnySunhwa.github.io/"/>
-  <updated>2018-07-10T11:11:19.770Z</updated>
+  <updated>2018-07-13T06:34:11.594Z</updated>
   <id>https://SunnySunhwa.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TIL_180712 ReactJS Component (cycle, smart/dumb)</title>
+    <link href="https://SunnySunhwa.github.io/2018/07/12/TIL-180712/"/>
+    <id>https://SunnySunhwa.github.io/2018/07/12/TIL-180712/</id>
+    <published>2018-07-12T06:14:52.000Z</published>
+    <updated>2018-07-13T06:34:11.594Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ReactJS"><a href="#ReactJS" class="headerlink" title="ReactJS"></a>ReactJS</h1><h2 id="Order-in-component-cycle"><a href="#Order-in-component-cycle" class="headerlink" title="Order in component cycle"></a>Order in component cycle</h2><ol><li>componentWillMount(): request api</li><li>render()</li><li>componentDidMount()</li></ol><h2 id="Update-stage"><a href="#Update-stage" class="headerlink" title="Update stage"></a>Update stage</h2><ol><li>componentWillReceiveProps() -</li><li>shouldComponentUpdate(): comparison in new prop and old prop, if have changes, == true</li><li>componenetWillUpdate()</li><li>render()</li><li>componentDidUpdate()</li></ol><h2 id="Data-type-checking"><a href="#Data-type-checking" class="headerlink" title="Data type checking"></a>Data type checking</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Movie</span> <span class="keyword">extends</span> <span class="title">component</span></span>&#123;</div><div class="line">  <span class="keyword">static</span> propTypes = &#123;</div><div class="line">    <span class="comment">//isRequired = 'Movie' has to have a title(string) as a prop </span></div><div class="line">    title: PropTypes.string.isRequired,</div><div class="line">    poster: PropTypes.string</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render()&#123;</div><div class="line">    <span class="keyword">return</span>(</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;MoviePoster poster=&#123;<span class="keyword">this</span>.props.poster&#125;/&gt;</div><div class="line">        &lt;h1&gt; &#123;<span class="keyword">this</span>.props.title&#125;&lt;<span class="regexp">/h1&gt;</span></div><div class="line"><span class="regexp">      &lt;/</span>div&gt;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><hr><h2 id="State"><a href="#State" class="headerlink" title="State"></a>State</h2><ul><li>state = {}</li><li>if ‘state’ change, component do ‘render()’ again automatically</li><li>when want to change the state’s value, should use <strong>this.setState({content})</strong> </li><li>can’t over ride like ‘this.state.varName = ‘other value’ -&gt; automatic change ain’t be happend.</li><li>TIP for infinite scroll</li></ul><h2 id="Smart-Componenet-vs-Dumb-Componenet"><a href="#Smart-Componenet-vs-Dumb-Componenet" class="headerlink" title="Smart Componenet vs Dumb Componenet"></a>Smart Componenet vs Dumb Componenet</h2><ul><li>if component doesn’t need to have componenetWillMount, function, updateState, render but only do ‘return’, it can be stateless componenet (= Dumb Componenet).</li><li>use ‘functional component’ instead of ‘class componenet’</li><li>for checking prop type: use the name instead of ‘static’ keyworkd.</li><li>eg) MoviePoster.proptypes = { poster: PropTypes.string.isRequired}</li></ul><h4 id="How-to-change-smart-component-into-dumb"><a href="#How-to-change-smart-component-into-dumb" class="headerlink" title="How to change smart component into dumb."></a>How to change smart component into dumb.</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// before</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MoviePoster</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</div><div class="line">  render()&#123;</div><div class="line">    <span class="keyword">return</span>(</div><div class="line">      &lt;img src=&#123;<span class="keyword">this</span>.props.poster&#125;/&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// after = dumb componenet</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MoviePoster</span>(<span class="params">&#123;poster&#125;</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span>(</div><div class="line">    &lt;img src=&#123;poster&#125; /&gt;</div><div class="line">  )</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;ReactJS&quot;&gt;&lt;a href=&quot;#ReactJS&quot; class=&quot;headerlink&quot; title=&quot;ReactJS&quot;&gt;&lt;/a&gt;ReactJS&lt;/h1&gt;&lt;h2 id=&quot;Order-in-component-cycle&quot;&gt;&lt;a href=&quot;#Order-in-
+      
+    
+    </summary>
+    
+      <category term="framework" scheme="https://SunnySunhwa.github.io/categories/framework/"/>
+    
+      <category term="react" scheme="https://SunnySunhwa.github.io/categories/framework/react/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>TIL_180607 다양한 정렬검색을 통한 학생점수 관리 프로그램</title>
